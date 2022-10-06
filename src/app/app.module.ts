@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorizationFormComponent } from './modules/authorization/authorization-form/authorization-form.component';
 import { TranslateButtonComponent } from './shared/translate-button/translate-button.component';
 import { BaseTableComponent } from './shared/base-table/base-table.component';
 import { MainFormComponent } from './shared/main-form/main-form.component';
@@ -17,9 +16,6 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorizationFormComponent,
-    TranslateButtonComponent,
-    BaseTableComponent,
     MainFormComponent,
     MainFormInfoComponent,
     MainFormCvComponent,
