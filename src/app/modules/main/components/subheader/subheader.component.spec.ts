@@ -8,9 +8,8 @@ describe('SubheaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubheaderComponent ]
-    })
-    .compileComponents();
+      declarations: [SubheaderComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SubheaderComponent);
     component = fixture.componentInstance;
