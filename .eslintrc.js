@@ -14,7 +14,9 @@ module.exports = {
                 'plugin:import/recommended',
                 'plugin:prettier/recommended',
             ],
-            rules: {},
+            rules: {
+                'import/named': 0,
+            },
         },
         {
             files: ['*.component.html'],
