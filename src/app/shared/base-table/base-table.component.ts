@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-base-table',
   templateUrl: './base-table.component.html',
-  styleUrls: ['./base-table.component.scss']
+  styleUrls: ['./base-table.component.scss'],
 })
 export class BaseTableComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

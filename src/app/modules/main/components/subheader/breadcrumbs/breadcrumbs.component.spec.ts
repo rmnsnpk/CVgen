@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainFormInfoComponent } from './main-form-info.component';
+import { BreadcrumbsComponent } from './breadcrumbs.component';
 
-describe('MainFormInfoComponent', () => {
-  let component: MainFormInfoComponent;
-  let fixture: ComponentFixture<MainFormInfoComponent>;
+describe('BreadcrumbsComponent', () => {
+  let component: BreadcrumbsComponent;
+  let fixture: ComponentFixture<BreadcrumbsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainFormInfoComponent ]
+      declarations: [ BreadcrumbsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainFormInfoComponent);
+    fixture = TestBed.createComponent(BreadcrumbsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

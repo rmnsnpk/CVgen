@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainFormCvComponent } from './main-form-cv.component';
+import { ProjectsFormCvComponent } from './projects-form-cv.component';
 
-describe('MainFormCvComponent', () => {
-  let component: MainFormCvComponent;
-  let fixture: ComponentFixture<MainFormCvComponent>;
+describe('ProjectsFormCvComponent', () => {
+  let component: ProjectsFormCvComponent;
+  let fixture: ComponentFixture<ProjectsFormCvComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainFormCvComponent ]
+      declarations: [ ProjectsFormCvComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainFormCvComponent);
+    fixture = TestBed.createComponent(ProjectsFormCvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
