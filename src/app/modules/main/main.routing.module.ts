@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainModule } from './main.module';
-import { EmployeePageComponent } from './modules/employee/employee-page/employee.page.component';
-
-import { ProjectPageComponent } from './modules/project/project-page/project-page.component';
+import {
+  EMPLOYEE_PATH,
+  PROJECTS_PATH,
+} from 'src/app/shared/constants/constants';
 import { MainComponent } from './pages/main.component';
 
 const routes: Routes = [
@@ -12,16 +12,16 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: 'employee',
+        path: EMPLOYEE_PATH.path,
         loadChildren: () =>
-          import('../main/modules/employee/employee.module').then(
+          import('../employee/employee.module').then(
             (module) => module.EmployeeModule
           ),
       },
       {
-        path: 'projects',
+        path: PROJECTS_PATH.path,
         loadChildren: () =>
-          import('../main/modules/project/project.module').then(
+          import('../project/project.module').then(
             (module) => module.ProjectModule
           ),
       },
