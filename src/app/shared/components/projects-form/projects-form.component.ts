@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-projects-form',
+  selector: 'cvg-projects-form',
   templateUrl: './projects-form.component.html',
   styleUrls: ['./projects-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsFormComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class ProjectsFormComponent {}
