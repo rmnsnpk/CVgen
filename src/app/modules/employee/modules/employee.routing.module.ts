@@ -8,9 +8,9 @@ import {
   EMPLOYEE_EDIT_PATH,
   EMPLOYEE_INFO_PATH,
 } from 'src/app/shared/constants/constants';
-import { AddEmployeePageComponent } from './components/add-employee-page/add-employee-page.component';
-import { EditEmployeePageComponent } from './components/edit-employee-page/edit-employee-page.component';
-import { EmployeePageComponent } from './pages/employee-page/employee.page.component';
+import { AddEmployeePageComponent } from '../components/add-employee-page/add-employee-page.component';
+import { EditEmployeePageComponent } from '../components/edit-employee-page/edit-employee-page.component';
+import { EmployeePageComponent } from '../pages/employee-page/employee.page.component';
 
 const routes: Routes = [
   { path: '', component: EmployeePageComponent },

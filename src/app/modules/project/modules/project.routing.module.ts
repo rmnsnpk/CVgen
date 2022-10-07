@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectPageComponent } from './pages/project-page/project-page.component';
-import { AddProjectPageComponent } from './components/add-project-page/add-project-page.component';
-import { EditProjectPageComponent } from './components/edit-project-page/edit-project-page.component';
+import { ProjectPageComponent } from '../pages/project-page/project-page.component';
+import { AddProjectPageComponent } from '../components/add-project-page/add-project-page.component';
+import { EditProjectPageComponent } from '../components/edit-project-page/edit-project-page.component';
 import {
   PROJECTS_ADD_PATH,
   PROJECTS_EDIT_PATH,
