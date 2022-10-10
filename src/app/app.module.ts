@@ -6,15 +6,11 @@ import { AppComponent } from './app.component';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
+
 import { AppRoutingModule } from './app.routing.module';
-import { AuthorizationModule } from './modules/authorization/authorization.module';
-import { MainModule } from './modules/main/main.module';
 import { StateModule } from './state.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 registerLocaleData(en);
 
@@ -23,17 +19,14 @@ registerLocaleData(en);
   imports: [
     AppRoutingModule,
     StateModule,
-    MainModule,
-    AuthorizationModule,
     CommonModule,
-    RouterModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    TranslateModule.forRoot(),
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

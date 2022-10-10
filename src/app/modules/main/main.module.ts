@@ -9,6 +9,5 @@ import { MainRoutingModule } from './main.routing.module';
 @NgModule({
   declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent],
   imports: [MainRoutingModule],
-  exports: [],
 })
 export class MainModule {}
