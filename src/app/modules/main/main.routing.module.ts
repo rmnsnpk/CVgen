@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/constants';
-import { MainComponent } from '../pages/main.component';
+import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-pathes';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
+    component: MainPageComponent,
     children: [
       {
         path: EMPLOYEE_PATH.path,
         loadChildren: () =>
-          import('../../employee/modules/employee.module').then((module) => module.EmployeeModule),
+          import('../employee/employee.module').then((module) => module.EmployeeModule),
       },
       {
         path: PROJECTS_PATH.path,
         loadChildren: () =>
-          import('../../project/modules/project.module').then((module) => module.ProjectModule),
+          import('../project/project.module').then((module) => module.ProjectModule),
       },
       { path: '**', redirectTo: 'employee' },
     ],
   },
+  { path: '**', redirectTo: './' },
 ];
 
 @NgModule({

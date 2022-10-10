@@ -11,8 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { AppRoutingModule } from './app.routing.module';
-import { AuthorizationModule } from './modules/authorization/modules/authorization.module';
-import { MainModule } from './modules/main/modules/main.module';
+import { AuthorizationModule } from './modules/authorization/authorization.module';
+import { MainModule } from './modules/main/main.module';
 import { StateModule } from './state.module';
 import { TranslateModule } from '@ngx-translate/core';
 
