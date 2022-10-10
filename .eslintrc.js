@@ -25,6 +25,12 @@ module.exports = {
             ],
             rules: {
                 'import/named': 'off',
+                'prettier/prettier': [
+                    'error',
+                    {
+                        endOfLine: 'auto',
+                    },
+                ],
             },
         },
         {

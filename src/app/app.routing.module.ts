@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthorizationFormComponent } from './modules/authorization/pages/authorization-form/authorization-form.component';
-import { AUTH_PATH } from './shared/constants/constants';
+
+import { AUTH_PATH } from './shared/constants/routing-pathes';
 
 const routes: Routes = [
-  { path: AUTH_PATH.path, component: AuthorizationFormComponent },
+  {
+    path: AUTH_PATH.path,
+    loadChildren: () =>
+      import('./modules/authorization/authorization.module').then(
+        (module) => module.AuthorizationModule,
+      ),
+  },
   {
     path: '',
-    loadChildren: () =>
-      import('../app/modules/main/modules/main.module').then((module) => module.MainModule),
+    loadChildren: () => import('./modules/main/main.module').then((module) => module.MainModule),
   },
   { path: '**', redirectTo: '/' },
 ];
