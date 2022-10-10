@@ -1,13 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-base-table',
+  selector: 'cvg-base-table',
   templateUrl: './base-table.component.html',
   styleUrls: ['./base-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BaseTableComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class BaseTableComponent {}

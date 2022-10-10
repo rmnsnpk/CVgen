@@ -1,13 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-authorization-form',
+  selector: 'cvg-authorization-form',
   templateUrl: './authorization-form.component.html',
   styleUrls: ['./authorization-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthorizationFormComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AuthorizationFormComponent {}

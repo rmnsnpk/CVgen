@@ -7,12 +7,7 @@ import { MainComponent } from '../pages/main.component';
 import { MainRoutingModule } from './main.routing.module';
 
 @NgModule({
-  declarations: [
-    MainComponent,
-    HeaderComponent,
-    SubheaderComponent,
-    MenuComponent,
-  ],
+  declarations: [MainComponent, HeaderComponent, SubheaderComponent, MenuComponent],
   imports: [MainRoutingModule],
   exports: [],
 })

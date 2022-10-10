@@ -1,13 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-add-employee-page',
+  selector: 'cvg-add-employee-page',
   templateUrl: './add-employee-page.component.html',
   styleUrls: ['./add-employee-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddEmployeePageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AddEmployeePageComponent {}

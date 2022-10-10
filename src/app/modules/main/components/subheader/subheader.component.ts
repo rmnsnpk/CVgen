@@ -1,13 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-subheader',
+  selector: 'cvg-subheader',
   templateUrl: './subheader.component.html',
   styleUrls: ['./subheader.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubheaderComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class SubheaderComponent {}

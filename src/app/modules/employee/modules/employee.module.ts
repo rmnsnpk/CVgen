@@ -7,11 +7,7 @@ import { EditEmployeePageComponent } from '../components/edit-employee-page/edit
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 
 @NgModule({
-  declarations: [
-    EmployeePageComponent,
-    EditEmployeePageComponent,
-    AddEmployeePageComponent,
-  ],
+  declarations: [EmployeePageComponent, EditEmployeePageComponent, AddEmployeePageComponent],
   imports: [EmployeeRoutingModule, BaseTableModule],
 })
 export class EmployeeModule {}
