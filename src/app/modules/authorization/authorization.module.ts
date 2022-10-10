@@ -5,6 +5,5 @@ import { AuthorizationPageComponent } from './pages/authorization-page/authoriza
   declarations: [AuthorizationPageComponent],
   imports: [CommonModule],
   providers: [],
-  exports: [AuthorizationPageComponent],
 })
 export class AuthorizationModule {}

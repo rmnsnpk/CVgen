@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-pathes';
+import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-paths';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
