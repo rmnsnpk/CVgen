@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app.routing.module';
 import { StateModule } from './state.module';
+import { InputControlComponent } from './shared/components/input-control/input-control.component';
 
 registerLocaleData(en);
 
@@ -25,6 +26,8 @@ registerLocaleData(en);
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
+    InputControlComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

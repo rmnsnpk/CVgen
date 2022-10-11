@@ -11,11 +11,11 @@ const routes: Routes = [
         (module) => module.AuthorizationModule,
       ),
   },
-  {
-    path: '',
-    loadChildren: () => import('./modules/main/main.module').then((module) => module.MainModule),
-  },
-  { path: '**', redirectTo: '/' },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./modules/main/main.module').then((module) => module.MainModule),
+  // },
+  // { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
