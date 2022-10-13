@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
-import { errorsList } from '../constants/controlErrors';
+import { errorsList } from '../constants/control-errors.const';
 
 @Pipe({
   name: 'controlErrors',

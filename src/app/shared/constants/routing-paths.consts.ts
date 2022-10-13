@@ -1,4 +1,4 @@
-import { IRouteConfig } from '../interfaces/route.config';
+import { IRouteConfig } from '../interfaces/route.interface';
 
 export const AUTH_PATH: IRouteConfig = {
   path: 'auth',
