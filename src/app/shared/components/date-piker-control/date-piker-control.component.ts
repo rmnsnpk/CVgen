@@ -6,6 +6,7 @@ import en from '@angular/common/locales/en';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzI18nService } from 'ng-zorro-antd/i18n';
 import { BaseControl } from '../../classes/base-control';
+import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
 registerLocaleData(en);
 
 @Component({
@@ -15,8 +16,6 @@ registerLocaleData(en);
   styleUrls: ['./date-piker-control.component.scss'],
   providers: [NzI18nService],
 
-  imports: [NzDatePickerModule, ReactiveFormsModule, CommonModule],
+  imports: [NzDatePickerModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
 })
-export class DatePikerControlComponent extends BaseControl {
-  datePickerControl = this.baseControl;
-}
+export class DatePikerControlComponent extends BaseControl {}

@@ -1,9 +1,9 @@
 <div class="control">
     <label class="control__label">{{ label }}</label>
-    <nz-select class="control__field" [formControl]="selectControl" nzShowSearch nzAllowClear [nzPlaceHolder]="placeholder">
+    <nz-select class="control__field" [formControl]="baseControl" nzShowSearch nzAllowClear [nzPlaceHolder]="placeholder">
         <nz-option *ngFor="let option of options" [nzValue]="option" [nzLabel]="option"></nz-option>
     </nz-select>
-    <p class="control__error_message" *ngIf="selectControl.invalid && selectControl.dirty">
-        Please, specify the field
+    <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
+        {{baseControl.errors | controlErrors}}
     </p>
 </div>

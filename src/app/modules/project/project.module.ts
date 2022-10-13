@@ -7,11 +7,7 @@ import { ProjectPageComponent } from './pages/project-page/project-page.componen
 import { ProjectRoutingModule } from './project.routing.module';
 
 @NgModule({
-  declarations: [
-    ProjectPageComponent,
-    AddProjectPageComponent,
-    EditProjectPageComponent,
-  ],
+  declarations: [ProjectPageComponent, AddProjectPageComponent, EditProjectPageComponent],
   imports: [ProjectRoutingModule, BaseTableModule, ProjectsFormModule],
 })
 export class ProjectModule {}
