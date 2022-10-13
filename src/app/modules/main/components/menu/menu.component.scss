@@ -25,10 +25,3 @@
 .sidebar__selectors {
   border: 0px;
 }
-
-@media screen and (max-width: 850px) {
-  :host {
-    visibility: hidden;
-    display: none;
-  }
-}
