@@ -16,10 +16,10 @@ const routes: Routes = [
         path: PROJECTS_PATH.path,
         loadChildren: () => import('../project/project.module').then((module) => module.ProjectModule),
       },
-      { path: '**', redirectTo: './' },
+      { path: '**', redirectTo: EMPLOYEE_PATH.path },
     ],
   },
-  { path: '**', redirectTo: './' },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
