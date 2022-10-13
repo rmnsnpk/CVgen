@@ -18,7 +18,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('../project/project.module').then((module) => module.ProjectModule),
       },
-      { path: '**', redirectTo: 'employee' },
+      { path: '**', redirectTo: './' },
     ],
   },
   { path: '**', redirectTo: './' },

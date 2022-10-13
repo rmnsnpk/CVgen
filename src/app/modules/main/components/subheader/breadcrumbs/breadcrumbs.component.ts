@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'cvg-breadcrumbs',
-  templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.scss'],
+  template: `
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>Application List</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>An Application</nz-breadcrumb-item>
+    </nz-breadcrumb>
+  `,
 })
-export class BreadcrumbsComponent {}
+export class BreadCrumbsComponent {}
