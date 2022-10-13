@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AUTH_PATH } from './shared/constants/routing-paths';
+
+import { AUTH_PATH } from './shared/constants/routing-paths.consts';
 
 const routes: Routes = [
   {
     path: AUTH_PATH.path,
-    loadChildren: () =>
-      import('./modules/authorization/authorization.module').then(
-        (module) => module.AuthorizationModule,
-      ),
+    loadChildren: () => import('./modules/authorization/authorization.module').then((module) => module.AuthorizationModule),
   },
   {
     path: '',
