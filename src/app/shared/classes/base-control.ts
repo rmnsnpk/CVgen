@@ -1,16 +1,42 @@
-import { Directive, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl } from '@angular/forms';
+import {
+  ChangeDetectorRef,
+  Directive,
+  DoCheck,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 
 @Directive()
-export class BaseControls implements ControlValueAccessor, OnInit {
+export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
   @Input() label: string;
 
-  public baseControl = new FormControl('');
+  @Input() placeholder: string;
+
+  public baseControl = new FormControl(null);
+
+  constructor(private ngControl: NgControl, private cdR: ChangeDetectorRef) {
+    this.ngControl.valueAccessor = this;
+  }
 
   ngOnInit() {
     this.baseControl.valueChanges.subscribe((value) => {
       this.onChange(value);
     });
+  }
+
+  ngDoCheck(): void {
+    if (this.ngControl.control.errors !== this.baseControl.errors) {
+      this.baseControl.setErrors(this.ngControl.control.errors);
+    }
+
+    if (this.ngControl.control.dirty) {
+      this.baseControl.markAsDirty();
+      this.cdR.markForCheck();
+    } else {
+      this.baseControl.markAsPristine();
+    }
+    // console.log(this.baseControl);
   }
 
   public writeValue(value: string | null): void {
@@ -21,11 +47,11 @@ export class BaseControls implements ControlValueAccessor, OnInit {
     this.onChange = fn;
   }
 
-  private onTouched = (): void => undefined;
+  public onTouched = (): void => undefined;
 
   public registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
-  private onChange = (value: any): any => value;
+  public onChange = (value: any): any => value;
 }

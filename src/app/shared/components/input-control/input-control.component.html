@@ -1,5 +1,8 @@
-<label>{{ label }}</label>
-<input type="text" [formControl]="input" nz-input />
-<div>
-    {{ input.errors }}
+<div class="control">
+    <label class="control__label">{{ label }}</label>
+    <input class="control__field" type="text" [placeholder]="placeholder" [formControl]="inputControl" nz-input />
+
+    <p class="control__error_message" *ngIf="inputControl.invalid && inputControl.dirty">
+        Please, specify the field
+    </p>
 </div>

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputControlComponent } from './input-control.component';
+import { SelectControlComponent } from './select-control.component';
 
-describe('InputControlComponent', () => {
-  let component: InputControlComponent;
-  let fixture: ComponentFixture<InputControlComponent>;
+describe('SelectControlComponent', () => {
+  let component: SelectControlComponent;
+  let fixture: ComponentFixture<SelectControlComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InputControlComponent],
+      imports: [SelectControlComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InputControlComponent);
+    fixture = TestBed.createComponent(SelectControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

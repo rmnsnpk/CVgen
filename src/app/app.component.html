@@ -1,3 +1,10 @@
 <form [formGroup]="form">
-    <cvg-input-control formControlName="inputName" [label]="'Name'"></cvg-input-control>
+    <cvg-input-control formControlName="inputName" [label]="'Name'" [placeholder]="'Name'"></cvg-input-control>
+    <cvg-num-input-control formControlName="inputNumber" [label]="'Number'" [placeholder]="'Number'"></cvg-num-input-control>
+    <cvg-select-control formControlName="select" [label]="'Name'" [options]="['sd']" [placeholder]="'select'"></cvg-select-control>
+
+    <cvg-multi-select-control formControlName="multiSelect" [label]="'Name'" [options]="['sd']" [placeholder]="'multiselect'">
+    </cvg-multi-select-control>
+
+    <cvg-date-piker-control formControlName="datePicker" [label]="'Name'" [placeholder]="'pickdate'"></cvg-date-piker-control>
 </form>
