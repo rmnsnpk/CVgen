@@ -1,17 +1,11 @@
-import {
-  ChangeDetectorRef,
-  Directive,
-  DoCheck,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectorRef, Directive, DoCheck, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 
 @Directive()
 export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
-  @Input() label: string;
+  @Input() label = '';
 
-  @Input() placeholder: string;
+  @Input() placeholder = '';
 
   public baseControl = new FormControl(null);
 
@@ -36,7 +30,6 @@ export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
     } else {
       this.baseControl.markAsPristine();
     }
-    // console.log(this.baseControl);
   }
 
   public writeValue(value: string | null): void {
