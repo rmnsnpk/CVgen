@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AUTH_PATH } from './shared/constants/routing-paths';
+import { AUTH_PATH } from './shared/constants/routing-paths.consts';
 
 const routes: Routes = [
   {
