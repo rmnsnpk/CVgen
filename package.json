@@ -7,8 +7,8 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
-        "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --write",
+        "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html}' --quiet --fix",
+        "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html}' --write",
         "e2e": "ng e2e",
         "prepare": "husky install"
     },
@@ -69,5 +69,8 @@
         "lint-staged": "^13.0.3",
         "prettier": "^2.7.1",
         "typescript": "~4.7.2"
-    }
+    },
+    "eslintIgnore": [
+        "**/*.scss"
+    ]
 }
