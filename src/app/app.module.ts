@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { StateModule } from './state.module';
 @NgModule({
   declarations: [AppComponent],
-  imports: [AppRoutingModule, StateModule, CommonModule, BrowserModule, HttpClientModule, InputControlComponent],
+  imports: [AppRoutingModule, StateModule, CommonModule, BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

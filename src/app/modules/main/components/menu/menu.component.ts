@@ -22,10 +22,4 @@ export class MenuComponent {
       return { 'min-width': '250px' };
     }
   }
-
-  // constructor(@Optional() private mainPageComponent: MainPageComponent) {}
-
-  // changeVisibility() {
-  //   return this.mainPageComponent.expandMenu();
-  // }
 }
