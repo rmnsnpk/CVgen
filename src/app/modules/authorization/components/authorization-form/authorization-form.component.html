@@ -1,0 +1,6 @@
+<form [formGroup]="authForm" class="auth__form" (ngSubmit)="authSubmit()">
+  <cvg-input-control [label]="'Username'" formControlName="username"></cvg-input-control>
+  <label for="username">Password</label>
+  <cvg-input-control [label]="'Password'" formControlName="password"></cvg-input-control>
+  <button type="submit" nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+</form>
