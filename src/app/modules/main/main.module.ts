@@ -16,12 +16,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { BreadCrumbsComponent } from './components/subheader/breadcrumbs/breadcrumbs.component';
 import { CommonModule } from '@angular/common';
+import { TranslateButtonComponent } from 'src/app/shared/components/translate-button/translate-button.component';
 
 @NgModule({
   declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent, BreadCrumbsComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
+    TranslateButtonComponent,
     NzIconModule,
     NzTypographyModule,
     BaseTableModule,

@@ -16,6 +16,11 @@ registerLocaleData(en);
   styleUrls: ['./date-piker-control.component.scss'],
   providers: [NzI18nService],
 
-  imports: [NzDatePickerModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [
+    NzDatePickerModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class DatePikerControlComponent extends BaseControl {}

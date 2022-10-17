@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'cvg-root',
@@ -8,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class AppComponent {
   title: 'CVGEN';
+
+  constructor(private translateService: TranslateService) {
+    translateService.setDefaultLang('en');
+    translateService.use('en');
+  }
 }

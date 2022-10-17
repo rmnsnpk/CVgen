@@ -9,6 +9,11 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   templateUrl: './input-control.component.html',
   styleUrls: ['./input-control.component.scss'],
   standalone: true,
-  imports: [NzInputModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [
+    NzInputModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class InputControlComponent extends BaseControl {}
