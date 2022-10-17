@@ -1,26 +1,26 @@
 :host {
-    display: block;
-    width: 100%;
-    height: 15%;
+  display: block;
+  width: 100%;
+  height: 15%;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    height: 136px;
-    padding-left: 24px;
-    .projects-label {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-    .list-label {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-    .breadcrumbs-label {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  height: 136px;
+  padding-left: 24px;
+  .projects-label {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .list-label {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .breadcrumbs-label {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 }

@@ -1,20 +1,28 @@
 <div [ngStyle]="maxWidthClassChanger()" class="container">
-    <ul class="sidebar-selectors" nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
-        <li nzIcon="mail" nzTitle="Employees" nz-submenu nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''" nzSelected>
-            <ul>
-                <li nz-menu-item>Employee List</li>
-                <li nz-menu-item>Add employee</li>
-            </ul>
-        </li>
+  <ul class="sidebar-selectors" nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
+    <li
+      nzIcon="mail"
+      nzTitle="Employees"
+      nz-submenu
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+      nzSelected
+    >
+      <ul>
+        <li nz-menu-item>Employee List</li>
+        <li nz-menu-item>Add employee</li>
+      </ul>
+    </li>
 
-        <li nz-submenu nzTitle="Projects" nzIcon="setting">
-            <ul>
-                <li nz-menu-item>Projects List</li>
-                <li nz-menu-item>Add project</li>
-            </ul>
-        </li>
-    </ul>
-    <div class="menu" (click)="toggleCollapsed()">
-        <span class="menu__button" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-    </div>
+    <li nz-submenu nzTitle="Projects" nzIcon="setting">
+      <ul>
+        <li nz-menu-item>Projects List</li>
+        <li nz-menu-item>Add project</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="menu" (click)="toggleCollapsed()">
+    <span class="menu__button" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+  </div>
 </div>
