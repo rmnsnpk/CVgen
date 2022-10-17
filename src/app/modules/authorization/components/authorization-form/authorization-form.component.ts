@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { TokenService } from 'src/app/shared/services/token.service';
+import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
+import { AuthApiService } from 'src/app/shared/services/api/auth.api.service';
+
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -16,7 +18,13 @@ export class AuthorizationFormComponent implements OnInit {
 
   isSubmitted = false;
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private tokenService: TokenService) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private aRoute: ActivatedRoute,
+    private authService: AuthService,
+    private authApiService: AuthApiService,
+  ) {}
 
   ngOnInit(): void {
     this.authForm = this.fb.group({
@@ -26,6 +34,10 @@ export class AuthorizationFormComponent implements OnInit {
   }
 
   authSubmit() {
-    console.log(this.authForm);
+    if (this.authForm.valid) {
+    }
+    this.authApiService.logIn(this.authForm.value).subscribe(() => {
+      this.router.navigate([`${EMPLOYEE_PATH.fullpath}`], { relativeTo: this.aRoute });
+    });
   }
 }

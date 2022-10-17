@@ -1,0 +1,57 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  background: url(../../../../../assets/img/auth/auth-bg.png) no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+
+  .translate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin: 12px;
+
+    &__icon {
+      padding: 11px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .auth {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &__block {
+        display: flex;
+        flex-direction: column;
+
+        &__logo {
+          display: flex;
+          font-display: column;
+          justify-content: center;
+          margin-bottom: 15px;
+          &__img {
+            margin-right: 15px;
+          }
+          &__text {
+            font-family: 'AvenirRoman';
+            padding-top: 10px;
+
+            font-style: normal;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+}

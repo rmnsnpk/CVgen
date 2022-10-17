@@ -1,8 +1,8 @@
 <div class="control">
-    <label class="control__label">{{ label }}</label>
-    <input class="control__field" type="text" [placeholder]="placeholder" [formControl]="baseControl" nz-input />
+  <label class="control__label">{{ label }}</label>
+  <input class="control__field" [type]="type" [placeholder]="placeholder" [formControl]="baseControl" nz-input />
 
-    <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
-        {{baseControl.errors | controlErrors }}
-    </p>
+  <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
+    {{ baseControl.errors | controlErrors }}
+  </p>
 </div>
