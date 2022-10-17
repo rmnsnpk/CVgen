@@ -10,7 +10,7 @@ import { AuthorizationFormComponent } from './components/authorization-form/auth
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputControlComponent } from 'src/app/shared/components/input-control/input-control.component';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from '../../shared/guards/auth.guard';
 
 @NgModule({
   declarations: [AuthorizationPageComponent, AuthorizationFormComponent],

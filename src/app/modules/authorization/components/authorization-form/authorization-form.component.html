@@ -2,4 +2,5 @@
   <cvg-input-control formControlName="email" label="Username"></cvg-input-control>
   <cvg-input-control formControlName="password" type="password" label="Password"></cvg-input-control>
   <button nzType="primary" nz-button type="submit" class="login-form-button login-form-margin">Log in</button>
+  <div *ngIf="isIncorrect">Username or Password incorrect!</div>
 </form>

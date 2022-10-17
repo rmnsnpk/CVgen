@@ -1,38 +1,15 @@
 <div [ngStyle]="maxWidthClassChanger()" class="container">
-  <ul
-    class="sidebar__selectors"
-    nz-menu
-    nzMode="inline"
-    nzTheme="light"
-    [nzInlineCollapsed]="isCollapsed"
-  >
-    <li
-      nzIcon="mail"
-      nzTitle="Employees"
-      nz-submenu
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
-      nzSelected
-    >
-      <ul>
-        <li nz-menu-item>Employee List</li>
-        <li nz-menu-item>Add employee</li>
-      </ul>
+  <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
+    <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+      <span nz-icon nzType="form"></span>
+      <span>Employees</span>
     </li>
-
-    <li nz-submenu nzTitle="Projects" nzIcon="setting">
-      <ul>
-        <li nz-menu-item>Projects List</li>
-        <li nz-menu-item>Add project</li>
-      </ul>
+    <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+      <span nz-icon nzType="database"></span>
+      <span>Projects</span>
     </li>
   </ul>
   <div class="menu__expander" (click)="toggleCollapsed()">
-    <span
-      class="menu__expander__button"
-      nz-icon
-      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-    ></span>
+    <span class="menu__expander__button" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
   </div>
 </div>

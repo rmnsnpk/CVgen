@@ -1,11 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
 import { AuthApiService } from 'src/app/shared/services/api/auth.api.service';
-
-import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'cvg-authorization-form',
@@ -16,14 +14,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class AuthorizationFormComponent implements OnInit {
   authForm!: FormGroup;
 
-  isSubmitted = false;
+  isIncorrect = false;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private aRoute: ActivatedRoute,
-    private authService: AuthService,
     private authApiService: AuthApiService,
+    private cdR: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -36,8 +34,12 @@ export class AuthorizationFormComponent implements OnInit {
   authSubmit() {
     if (this.authForm.valid) {
     }
-    this.authApiService.logIn(this.authForm.value).subscribe(() => {
-      this.router.navigate([`${EMPLOYEE_PATH.fullpath}`], { relativeTo: this.aRoute });
+    this.authApiService.logIn(this.authForm.value).subscribe({
+      next: () => this.router.navigate([`${EMPLOYEE_PATH.fullpath}`], { relativeTo: this.aRoute }),
+      error: () => {
+        this.isIncorrect = true;
+        this.cdR.markForCheck();
+      },
     });
   }
 }
