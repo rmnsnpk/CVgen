@@ -1,4 +1,4 @@
 export interface IRouteConfig {
-  path: string;
-  fullpath: string;
+ path: string;
+ fullpath: string;
 }

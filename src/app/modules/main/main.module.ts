@@ -18,23 +18,23 @@ import { BreadCrumbsComponent } from './components/subheader/breadcrumbs/breadcr
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    MainPageComponent,
-    HeaderComponent,
-    SubheaderComponent,
-    MenuComponent,
-    BreadCrumbsComponent,
-  ],
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    NzIconModule,
-    NzTypographyModule,
-    BaseTableModule,
-    NzBreadCrumbModule,
-    NzMenuModule,
-    NzLayoutModule,
-    NzToolTipModule,
-  ],
+ declarations: [
+  MainPageComponent,
+  HeaderComponent,
+  SubheaderComponent,
+  MenuComponent,
+  BreadCrumbsComponent,
+ ],
+ imports: [
+  CommonModule,
+  MainRoutingModule,
+  NzIconModule,
+  NzTypographyModule,
+  BaseTableModule,
+  NzBreadCrumbModule,
+  NzMenuModule,
+  NzLayoutModule,
+  NzToolTipModule,
+ ],
 })
 export class MainModule {}

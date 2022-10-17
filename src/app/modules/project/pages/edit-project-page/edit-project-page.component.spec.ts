@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditProjectPageComponent } from './edit-project-page.component';
 
 describe('EditProjectPageComponent', () => {
-  let component: EditProjectPageComponent;
-  let fixture: ComponentFixture<EditProjectPageComponent>;
+ let component: EditProjectPageComponent;
+ let fixture: ComponentFixture<EditProjectPageComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [EditProjectPageComponent],
-    }).compileComponents();
+ beforeEach(async () => {
+  await TestBed.configureTestingModule({
+   declarations: [EditProjectPageComponent],
+  }).compileComponents();
 
-    fixture = TestBed.createComponent(EditProjectPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  fixture = TestBed.createComponent(EditProjectPageComponent);
+  component = fixture.componentInstance;
+  fixture.detectChanges();
+ });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+ it('should create', () => {
+  expect(component).toBeTruthy();
+ });
 });

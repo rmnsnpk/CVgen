@@ -6,18 +6,18 @@ import { BaseControl } from '../../classes/base-control';
 import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
 
 @Component({
-  selector: 'cvg-select-control',
-  standalone: true,
-  templateUrl: './select-control.component.html',
-  styleUrls: ['./select-control.component.scss'],
+ selector: 'cvg-select-control',
+ standalone: true,
+ templateUrl: './select-control.component.html',
+ styleUrls: ['./select-control.component.scss'],
 
-  imports: [
-    NzSelectModule,
-    ReactiveFormsModule,
-    CommonModule,
-    ControlErrorsPipe,
-  ],
+ imports: [
+  NzSelectModule,
+  ReactiveFormsModule,
+  CommonModule,
+  ControlErrorsPipe,
+ ],
 })
 export class SelectControlComponent extends BaseControl {
-  @Input() options: any[];
+ @Input() options: any[];
 }

@@ -10,16 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StateModule } from './state.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    AppRoutingModule,
-    StateModule,
-    CommonModule,
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+ declarations: [AppComponent],
+ imports: [
+  AppRoutingModule,
+  StateModule,
+  CommonModule,
+  BrowserModule,
+  HttpClientModule,
+  BrowserAnimationsModule,
+ ],
+ providers: [],
+ bootstrap: [AppComponent],
 })
 export class AppModule {}
