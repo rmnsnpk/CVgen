@@ -10,17 +10,17 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
 registerLocaleData(en);
 
 @Component({
- selector: 'cvg-date-piker-control',
- standalone: true,
- templateUrl: './date-piker-control.component.html',
- styleUrls: ['./date-piker-control.component.scss'],
- providers: [NzI18nService],
+  selector: 'cvg-date-piker-control',
+  standalone: true,
+  templateUrl: './date-piker-control.component.html',
+  styleUrls: ['./date-piker-control.component.scss'],
+  providers: [NzI18nService],
 
- imports: [
-  NzDatePickerModule,
-  ReactiveFormsModule,
-  CommonModule,
-  ControlErrorsPipe,
- ],
+  imports: [
+    NzDatePickerModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class DatePikerControlComponent extends BaseControl {}

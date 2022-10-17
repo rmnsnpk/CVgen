@@ -9,13 +9,13 @@ import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee
 import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-employee-page.component';
 
 @NgModule({
- declarations: [
-  EmployeePageComponent,
-  EditEmployeePageComponent,
-  AddEmployeePageComponent,
-  EmployeeFormCvComponent,
-  EmployeeFormInfoComponent,
- ],
- imports: [EmployeeRoutingModule, BaseTableModule],
+  declarations: [
+    EmployeePageComponent,
+    EditEmployeePageComponent,
+    AddEmployeePageComponent,
+    EmployeeFormCvComponent,
+    EmployeeFormInfoComponent,
+  ],
+  imports: [EmployeeRoutingModule, BaseTableModule],
 })
 export class EmployeeModule {}
