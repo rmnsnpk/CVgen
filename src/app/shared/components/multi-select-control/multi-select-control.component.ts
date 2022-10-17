@@ -11,7 +11,12 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   templateUrl: './multi-select-control.component.html',
   styleUrls: ['./multi-select-control.component.scss'],
 
-  imports: [NzSelectModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [
+    NzSelectModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class MultiSelectControlComponent extends BaseControl {
   @Input() options: any[];

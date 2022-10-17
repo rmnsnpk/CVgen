@@ -1,6 +1,5 @@
 module.exports = {
     root: true,
-
     overrides: [{
             files: ['*.ts'],
             parserOptions: {
@@ -15,6 +14,7 @@ module.exports = {
                     },
                 },
             },
+
             extends: [
                 'plugin:@angular-eslint/recommended',
                 'airbnb-typescript/base',
@@ -29,16 +29,16 @@ module.exports = {
                     'error',
                     {
                         endOfLine: 'auto',
+                        printWidth: 80,
                     },
                 ],
             },
         },
+
         {
             files: ['*.html'],
             extends: ['plugin:@angular-eslint/template/recommended'],
-            rules: {
-
-            },
+            rules: {},
         },
         {
             files: ['*.component.ts'],

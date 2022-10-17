@@ -13,5 +13,4 @@
   "scss.validate": false,
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"]
-    
 }

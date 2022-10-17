@@ -10,6 +10,11 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   templateUrl: './num-input-control.component.html',
   styleUrls: ['./num-input-control.component.scss'],
 
-  imports: [NzInputNumberModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [
+    NzInputNumberModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class NumInputControlComponent extends BaseControl implements OnInit {}

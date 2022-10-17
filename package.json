@@ -20,7 +20,8 @@
     },
     "lint-staged": {
         "*.{js,ts}": [
-            "eslint --fix"
+            "eslint --fix",
+            "stylelitn --fix \"src/**/*.scss\" --custom-syntax postcss-scss"
         ]
     },
     "private": true,
