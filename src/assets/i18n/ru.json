@@ -1,0 +1,55 @@
+{
+  "MAIN": {
+    "EMPLOYEES": "Заказчики ",
+    "PROJECTS": "Проекты"
+  },
+  "AUTH": {
+    "LOGIN": "Войти"
+  },
+  "BUTTONS": {
+    "SAVE": "Сохранить",
+    "CANSEL": "Отмена",
+    "ADD_EMPLOYEE": "Добавить заказчика",
+    "ADD_PROJECT": "Добавить проект",
+    "ARCHIEVE": "Архивировать"
+  },
+  "CONTROLS": {
+    "ERRORS": {
+      "REQUIRED": "Пожалуйста, заполните поле"
+    },
+    "LABELS": {
+      "NAME": "Имя",
+      "USERNAME": "Имя пользователя",
+      "PASSWORD": "Пароль",
+      "SURNAME": "Фимилия",
+      "SPECIALIZATION": "Специализация",
+      "EMAIL": "Email",
+      "DEPARTMENT": "Отдел",
+      "SKILLS": "Навыки",
+      "SIZE": "Размер команды",
+      "START": "Дата начала",
+      "END": "Дата окончания",
+      "STACK": "Технологии",
+      "ROLES": "Роли",
+      "DESCRIPTION": "Описание",
+      "RESPONSIBILITIES": "Обязанности"
+    },
+    "PLACEHOLDERS": {
+      "NAME": "Введите ваше имя",
+      "USERNAME": "Введите имя пользователя",
+      "PASSWORD": "Введите пароль",
+      "SURNAME": "Введите вашу фамилию",
+      "SPECIALIZATION": "Специализация",
+      "EMAIL": "Email",
+      "DEPARTMENT": "Выберите отдел",
+      "SKILLS": "Выберите навыки",
+      "SIZE": "Введите размер команды",
+      "START": "Выберите дату",
+      "END": "Выберите дату",
+      "STACK": "Выберите технологии",
+      "ROLES": "Выберите роли",
+      "DESCRIPTION": "Описание",
+      "RESPONSIBILITIES": "Обязанности"
+    }
+  }
+}

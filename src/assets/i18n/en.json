@@ -1,0 +1,55 @@
+{
+  "MAIN": {
+    "EMPLOYEES": "Employees",
+    "PROJECTS": "Projects"
+  },
+  "AUTH": {
+    "LOGIN": "Login"
+  },
+  "BUTTONS": {
+    "SAVE": "Save",
+    "CANSEL": "Cansel",
+    "ADD_EMPLOYEE": "Add employee",
+    "ADD_PROJECT": "Add project",
+    "ARCHIEVE": "Archieve"
+  },
+  "CONTROLS": {
+    "ERRORS": {
+      "REQUIRED": "Please, specify the field"
+    },
+    "LABELS": {
+      "NAME": "First name",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "SURNAME": "Second Name",
+      "SPECIALIZATION": "Specialization",
+      "EMAIL": "Email",
+      "DEPARTMENT": "Department",
+      "SKILLS": "Skills",
+      "SIZE": "Team size",
+      "START": "Start date",
+      "END": "End date",
+      "STACK": "Tech stack",
+      "ROLES": "Roles",
+      "DESCRIPTION": "Description",
+      "RESPONSIBILITIES": "Responsibilities"
+    },
+    "PLACEHOLDERS": {
+      "NAME": "Enter your first name",
+      "USERNAME": "Enter your username",
+      "PASSWORD": "Enter your password",
+      "SURNAME": "Enter your second name",
+      "SPECIALIZATION": "Specialization",
+      "EMAIL": "Email",
+      "DEPARTMENT": "Enter department",
+      "SKILLS": "Select skills",
+      "SIZE": "Enter team size",
+      "START": "Select date",
+      "END": "Select date",
+      "STACK": "Select tech stack",
+      "ROLES": "Select roles",
+      "DESCRIPTION": "Enter description",
+      "RESPONSIBILITIES": "Enter responsibilities"
+    }
+  }
+}

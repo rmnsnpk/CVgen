@@ -1,8 +1,8 @@
 <div class="control">
-  <label class="control__label">{{ label }}</label>
+  <label class="control__label">{{ label | translate }}</label>
 
-  <nz-date-picker class="control__field" [formControl]="baseControl" [nzPlaceHolder]="placeholder"></nz-date-picker>
+  <nz-date-picker class="control__field" [formControl]="baseControl" [nzPlaceHolder]="placeholder | translate"></nz-date-picker>
   <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
-    {{ baseControl.errors | controlErrors }}
+    {{ baseControl.errors | controlErrors | translate }}
   </p>
 </div>

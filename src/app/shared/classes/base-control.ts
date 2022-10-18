@@ -1,10 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Directive,
-  DoCheck,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectorRef, Directive, DoCheck, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 
 @Directive()
