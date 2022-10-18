@@ -6,7 +6,7 @@ export interface IAuthRequest {
 export interface IAuthResponse {
   email: 'string';
   lastName: 'string';
-  firstName: string;
+  firstName: 'string';
 
   expiresIn: 'string';
   accessToken: 'string';

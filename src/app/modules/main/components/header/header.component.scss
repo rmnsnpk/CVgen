@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   .header {
-    &__logo {
+    &-logo {
       margin-left: 8px;
       min-width: 130px;
       width: 10%;
@@ -17,34 +17,34 @@
       align-items: center;
       justify-content: center;
 
-      &__img {
+      &-img {
         margin-left: 16px;
         margin-right: 16px;
       }
 
-      &__text {
+      &-text {
         white-space: nowrap;
         font-weight: 600;
         font-size: 18px;
       }
     }
 
-    &__nav {
+    &-nav {
       min-width: 250px;
       margin-right: 16px;
 
-      &__icons {
+      &-icons {
         height: 100%;
         display: flex;
         justify-content: space-between;
 
-        &__item {
+        &-item {
           display: flex;
           align-items: center;
         }
       }
 
-      &__profile {
+      &-profile {
         display: flex;
         justify-content: space-between;
         flex-direction: row;

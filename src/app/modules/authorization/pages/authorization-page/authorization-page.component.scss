@@ -14,7 +14,7 @@
 
     margin: 12px;
 
-    &__icon {
+    &-icon {
       padding: 11px;
     }
   }
@@ -31,19 +31,29 @@
       flex-direction: row;
       align-items: center;
 
-      &__block {
+      &-block {
         display: flex;
         flex-direction: column;
+        &-form {
+          &-items {
+            display: flex;
+            flex-direction: column;
+            &-wrong-auth {
+              color: var(--primary-red);
+              margin-top: 5px;
+            }
+          }
+        }
 
-        &__logo {
+        &-logo {
           display: flex;
           font-display: column;
           justify-content: center;
           margin-bottom: 15px;
-          &__img {
+          &-img {
             margin-right: 15px;
           }
-          &__text {
+          &-text {
             font-family: 'AvenirRoman';
             padding-top: 10px;
 

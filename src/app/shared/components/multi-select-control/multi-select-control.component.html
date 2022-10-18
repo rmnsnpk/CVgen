@@ -1,10 +1,10 @@
 <div class="control">
-  <label class="control__label">{{ label }}</label>
+  <label class="control-label">{{ label }}</label>
 
-  <nz-select class="control__field" [formControl]="baseControl" nzMode="multiple" [nzPlaceHolder]="placeholder">
+  <nz-select class="control-field" [formControl]="baseControl" nzMode="multiple" [nzPlaceHolder]="placeholder">
     <nz-option *ngFor="let option of options" [nzLabel]="option" [nzValue]="option"></nz-option>
   </nz-select>
-  <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
+  <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
     {{ baseControl.errors | controlErrors }}
   </p>
 </div>

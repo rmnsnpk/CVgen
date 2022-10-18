@@ -1,15 +1,22 @@
 <div class="translate">
-  <span class="translate__icon" nz-icon nzType="global" nzTheme="outline"></span>
+  <span class="translate-icon" nz-icon nzType="global" nzTheme="outline"></span>
 </div>
 
 <div class="container">
   <div class="auth">
-    <div class="auth__block">
-      <div class="auth__block__logo">
-        <img class="auth__block__logo__img" src="../../../../../assets/img/main/logo.svg" alt="" />
-        <h2 class="auth__block__logo__text">Ant Design</h2>
+    <div class="auth-block">
+      <div class="auth-block-logo">
+        <img class="auth-block-logo-img" src="../../../../../assets/img/main/logo.svg" alt="" />
+        <h2 class="auth-block-logo-text">Ant Design</h2>
       </div>
-      <cvg-authorization-form></cvg-authorization-form>
+      <form [formGroup]="authForm" class="auth-block-form" (ngSubmit)="authSubmit()">
+        <cvg-input-control class="auth-block-form-control" formControlName="email" label="Username"></cvg-input-control>
+        <cvg-input-control class="auth-block-form-control" formControlName="password" type="password" label="Password"></cvg-input-control>
+        <div class="auth-block-form-items">
+          <button nzType="primary" nz-button type="submit">Log in</button>
+          <span class="auth-block-form-items-wrong-auth" *ngIf="isWrongAccount">Username or Password incorrect!</span>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -19,16 +19,12 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .menu__expander {
+  .menu-expander {
     border-top: 1px solid var(--primary-light-gray);
 
-    &__button {
+    &-button {
       display: flex;
       margin: 12px 0px 12px 16px;
     }
-  }
-
-  .sidebar__selectors {
-    border: 0px;
   }
 }

@@ -1,11 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EXP_TOKEN, TOKEN } from '../constants/token.const';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private http: HttpClient) {}
-
   public logOut() {
     localStorage.removeItem(TOKEN);
     localStorage.removeItem(EXP_TOKEN);

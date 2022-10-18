@@ -1,19 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthorizationPageComponent } from './pages/authorization-page/authorization-page.component';
-import { AuthorizationRoutingModule } from './authorization.routing.module';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { AuthorizationFormComponent } from './components/authorization-form/authorization-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AuthorizationRoutingModule } from './authorization.routing.module';
+import { AuthorizationPageComponent } from './pages/authorization-page/authorization-page.component';
 
 import { InputControlComponent } from 'src/app/shared/components/input-control/input-control.component';
-import { AuthGuard } from '../../shared/guards/auth.guard';
 
 @NgModule({
-  declarations: [AuthorizationPageComponent, AuthorizationFormComponent],
+  declarations: [AuthorizationPageComponent],
   imports: [
     CommonModule,
     AuthorizationRoutingModule,
@@ -24,6 +22,6 @@ import { AuthGuard } from '../../shared/guards/auth.guard';
     ReactiveFormsModule,
     InputControlComponent,
   ],
-  providers: [AuthGuard],
+  providers: [],
 })
 export class AuthorizationModule {}
