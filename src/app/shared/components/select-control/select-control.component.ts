@@ -11,7 +11,12 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   templateUrl: './select-control.component.html',
   styleUrls: ['./select-control.component.scss'],
 
-  imports: [NzSelectModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [
+    NzSelectModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ControlErrorsPipe,
+  ],
 })
 export class SelectControlComponent extends BaseControl {
   @Input() options: any[];

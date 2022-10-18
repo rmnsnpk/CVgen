@@ -11,7 +11,14 @@ import { StateModule } from './state.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [AppRoutingModule, StateModule, CommonModule, BrowserModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [
+    AppRoutingModule,
+    StateModule,
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
