@@ -3,6 +3,15 @@
   width: auto;
   height: 100%;
   border-right: 1px solid var(--primary-light-gray);
+
+  ::ng-deep {
+    .ant-menu-inline {
+      width: 240px;
+    }
+    .ant-menu-inline-collapsed {
+      width: 50px;
+    }
+  }
 }
 
 .container {

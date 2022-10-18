@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
 
 import { AUTH_PATH } from './shared/constants/routing-paths.consts';
+import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modules/main/main.module').then((module) => module.MainModule),
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, TokenExpireGuard],
   },
   { path: '**', redirectTo: '/' },
 ];

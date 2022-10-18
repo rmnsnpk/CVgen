@@ -11,7 +11,7 @@ export class TokenExpirationInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService, private authApiService: AuthApiService, private router: Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.authService.isLogged && this.authService.isExpiredToken) {
+    if (this.authService.isLogged() && this.authService.isExpiredToken()) {
       this.authService.logOut();
       this.router.navigate([AUTH_PATH.path]);
       return EMPTY;

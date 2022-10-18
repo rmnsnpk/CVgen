@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, of } from 'rxjs';
@@ -13,7 +13,7 @@ import { markAllAsDirty } from 'src/app/shared/utils/mark-all-as-dirty';
   styleUrls: ['./authorization-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthorizationPageComponent {
+export class AuthorizationPageComponent implements OnInit {
   public authForm!: FormGroup;
 
   public isWrongAccount = false;
@@ -26,7 +26,6 @@ export class AuthorizationPageComponent {
     private cdR: ChangeDetectorRef,
   ) {}
 
-  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   public ngOnInit(): void {
     this.authForm = this.fb.group({
       email: ['', Validators.required],

@@ -12,12 +12,4 @@ export class MenuComponent {
   toggleCollapsed() {
     this.isCollapsed = !this.isCollapsed;
   }
-
-  maxWidthClassChanger(): any {
-    if (this.isCollapsed) {
-      return { 'min-width': '0' };
-    } else {
-      return { 'min-width': '250px' };
-    }
-  }
 }

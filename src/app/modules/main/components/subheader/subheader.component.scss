@@ -11,12 +11,7 @@
   flex-direction: column;
 
   height: 136px;
-  padding-left: 24px;
+  padding: 0px 0px 15px 24px;
 
-  .projects-label,
-  .list-label,
-  .breadcrumbs-label {
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
+  gap: 5px;
 }
