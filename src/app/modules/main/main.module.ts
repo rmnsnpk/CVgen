@@ -22,7 +22,13 @@ import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory'
 import { BreadCrumbsComponent } from './components/subheader/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent, BreadCrumbsComponent],
+  declarations: [
+    MainPageComponent,
+    HeaderComponent,
+    SubheaderComponent,
+    MenuComponent,
+    BreadCrumbsComponent,
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,
