@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { TranslateService } from '@ngx-translate/core';
-
 @Component({
   selector: 'cvg-menu',
   templateUrl: './menu.component.html',
@@ -10,8 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MenuComponent {
   @Input() isMenuVisible: boolean;
-
-  constructor(private translate: TranslateService) {}
 
   isCollapsed = false;
 

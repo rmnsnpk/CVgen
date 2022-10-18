@@ -1,12 +1,5 @@
-import {
-  ChangeDetectorRef,
-  Directive,
-  DoCheck,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectorRef, Directive, DoCheck, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
 
 @Directive()
 export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
@@ -16,7 +9,7 @@ export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
 
   public baseControl = new FormControl(null);
 
-  constructor(private ngControl: NgControl, private cdR: ChangeDetectorRef, private translate: TranslateService) {
+  constructor(private ngControl: NgControl, private cdR: ChangeDetectorRef) {
     this.ngControl.valueAccessor = this;
   }
 
