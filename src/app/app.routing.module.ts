@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: AUTH_PATH.path,
     loadChildren: () => import('./modules/authorization/authorization.module').then((module) => module.AuthorizationModule),
+    data: { title: 'AUTH.TITLES.MAIN' },
   },
   {
     path: '',

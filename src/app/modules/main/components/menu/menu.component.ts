@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'cvg-menu',
@@ -7,19 +8,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent {
-  @Input() isMenuVisible: boolean;
-
   isCollapsed = false;
+
+  EMPLOYEE_PATH = EMPLOYEE_PATH;
+
+  PROJECTS_PATH = PROJECTS_PATH;
 
   toggleCollapsed() {
     this.isCollapsed = !this.isCollapsed;
-  }
-
-  maxWidthClassChanger(): any {
-    if (this.isCollapsed) {
-      return { 'min-width': '0' };
-    } else {
-      return { 'min-width': '250px' };
-    }
   }
 }

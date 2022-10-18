@@ -7,8 +7,8 @@ import { PROJECTS_ADD_PATH, PROJECTS_EDIT_PATH } from 'src/app/shared/constants/
 
 const routes: Routes = [
   { path: '', component: ProjectPageComponent },
-  { path: PROJECTS_EDIT_PATH.path, component: EditProjectPageComponent },
-  { path: PROJECTS_ADD_PATH.path, component: AddProjectPageComponent },
+  { path: PROJECTS_EDIT_PATH.path, component: EditProjectPageComponent, data: { title: 'PROJECTS.TITLES.EDIT' } },
+  { path: PROJECTS_ADD_PATH.path, component: AddProjectPageComponent, data: { title: 'PROJECTS.TITLES.ADD' } },
 ];
 
 @NgModule({

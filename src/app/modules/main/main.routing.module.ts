@@ -11,10 +11,12 @@ const routes: Routes = [
       {
         path: EMPLOYEE_PATH.path,
         loadChildren: () => import('../employee/employee.module').then((module) => module.EmployeeModule),
+        data: { title: 'EMPLOYEES.TITLES.MAIN' },
       },
       {
         path: PROJECTS_PATH.path,
         loadChildren: () => import('../project/project.module').then((module) => module.ProjectModule),
+        data: { title: 'PROJECTS.TITLES.MAIN' },
       },
       { path: '**', redirectTo: EMPLOYEE_PATH.path },
     ],
