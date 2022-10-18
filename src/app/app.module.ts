@@ -8,12 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { StateModule } from './state.module';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
+import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
+import { StateModule } from './state.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
+      defaultLanguage: 'en2',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

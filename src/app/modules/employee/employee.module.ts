@@ -7,6 +7,9 @@ import { EmployeeFormCvComponent } from './components/employee-form-cv/employee-
 import { EmployeeFormInfoComponent } from './components/employee-form-info/employee-form-info.component';
 import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee-page.component';
 import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-employee-page.component';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,16 @@ import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-emplo
     EmployeeFormCvComponent,
     EmployeeFormInfoComponent,
   ],
-  imports: [EmployeeRoutingModule, BaseTableModule],
+  imports: [
+    EmployeeRoutingModule,
+    BaseTableModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
 export class EmployeeModule {}

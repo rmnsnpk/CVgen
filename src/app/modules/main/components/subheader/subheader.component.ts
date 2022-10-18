@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'cvg-subheader',
@@ -6,4 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./subheader.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubheaderComponent {}
+export class SubheaderComponent {
+  constructor(private translate: TranslateService) {}
+}
