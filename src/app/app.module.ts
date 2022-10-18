@@ -11,6 +11,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
 import { StateModule } from './state.module';
+import { LanguagesList } from './shared/enums/languages-list.enum';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,7 @@ import { StateModule } from './state.module';
     HttpClientModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en2',
+      defaultLanguage: LanguagesList.English,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

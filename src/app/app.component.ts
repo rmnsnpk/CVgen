@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguagesList } from './shared/enums/languages-list.enum';
 
 @Component({
   selector: 'cvg-root',
@@ -8,10 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title: 'CVGEN';
-
   constructor(private translateService: TranslateService) {
-    translateService.setDefaultLang('en');
-    translateService.use('en');
+    translateService.setDefaultLang(LanguagesList.English);
+    translateService.use(LanguagesList.English);
   }
 }

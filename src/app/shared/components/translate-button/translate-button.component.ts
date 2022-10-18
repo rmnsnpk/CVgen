@@ -16,10 +16,9 @@ export class TranslateButtonComponent {
 
   click() {
     if (this.translateService.currentLang === LanguagesList.English) {
-      this.translateService.use('ru');
+      this.translateService.use(LanguagesList.Russian);
     } else {
-      this.translateService.use('en');
+      this.translateService.use(LanguagesList.English);
     }
-    console.log(this.translateService.currentLang);
   }
 }
