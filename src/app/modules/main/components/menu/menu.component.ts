@@ -10,9 +10,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class MenuComponent {
   isCollapsed = false;
 
-  EMPLOYEE_PATH = EMPLOYEE_PATH;
+  public readonly employeePath = EMPLOYEE_PATH;
 
-  PROJECTS_PATH = PROJECTS_PATH;
+  public readonly projectsPath = PROJECTS_PATH;
 
   toggleCollapsed() {
     this.isCollapsed = !this.isCollapsed;

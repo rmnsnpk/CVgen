@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { LanguagesList } from '../../enums/languages-list.enum';
 import { ChangeTitleService } from '../../services/change-title.service';
@@ -10,10 +11,11 @@ import { ChangeTitleService } from '../../services/change-title.service';
   styleUrls: ['./translate-button.component.scss'],
   imports: [NzIconModule, TranslateModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ChangeTitleService],
   standalone: true,
 })
 export class TranslateButtonComponent {
-  constructor(private translateService: TranslateService, private changeTitle: ChangeTitleService) {}
+  constructor(private translateService: TranslateService, private changeTitleService: ChangeTitleService, private router: Router) {}
 
   changeLanguage() {
     if (this.translateService.currentLang === LanguagesList.English) {
@@ -21,8 +23,6 @@ export class TranslateButtonComponent {
     } else {
       this.translateService.use(LanguagesList.English);
     }
-    setTimeout(() => {
-      this.changeTitle.changeTitle();
-    }, 3);
+    this.changeTitleService.updateTitle(this.router.routerState.snapshot);
   }
 }

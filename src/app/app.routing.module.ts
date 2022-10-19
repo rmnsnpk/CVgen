@@ -6,8 +6,8 @@ import { AUTH_PATH } from './shared/constants/routing-paths.consts';
 const routes: Routes = [
   {
     path: AUTH_PATH.path,
+    title: 'AUTH.TITLES.MAIN',
     loadChildren: () => import('./modules/authorization/authorization.module').then((module) => module.AuthorizationModule),
-    data: { title: 'AUTH.TITLES.MAIN' },
   },
   {
     path: '',

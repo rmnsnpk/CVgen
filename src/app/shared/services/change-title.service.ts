@@ -1,56 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { filter, map, switchMap } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ChangeTitleService {
-  constructor(private titleService: Title, private translateService: TranslateService, private router: Router) {}
-
-  changeTitleSubscriber() {
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => {
-          let route: ActivatedRoute = this.router.routerState.root;
-          let routeTitle = '';
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          if (route.snapshot.data['title']) {
-            routeTitle = route.snapshot.data['title'];
-          }
-          return routeTitle;
-        }),
-        switchMap((routeTitle) => {
-          return this.translateService.get(routeTitle);
-        }),
-      )
-      .subscribe((title: string) => {
-        if (title) {
-          this.titleService.setTitle(`CVG - ${title}`);
-        }
-      });
+@Injectable()
+export class ChangeTitleService extends TitleStrategy {
+  constructor(private translateService: TranslateService, private title: Title) {
+    super();
   }
 
-  changeTitle() {
-    let route: ActivatedRoute = this.router.routerState.root;
-    let routeTitle = '';
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    if (route.snapshot.data['title']) {
-      routeTitle = route.snapshot.data['title'];
-    }
-    if (routeTitle) {
-      this.translateService.get(routeTitle).subscribe((title: string) => {
-        if (title) {
-          this.titleService.setTitle(`CVG - ${title}`);
-        }
+  public override updateTitle(snapshot: RouterStateSnapshot): void {
+    const title = this.buildTitle(snapshot);
+    if (title) {
+      this.translateService.get(title).subscribe((translatedTitle) => {
+        this.title.setTitle(`CVG  ${translatedTitle}`);
       });
+    } else {
+      this.title.setTitle('CVG');
     }
   }
 }
