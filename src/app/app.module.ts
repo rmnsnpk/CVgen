@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
@@ -33,7 +35,7 @@ import { ChangeTitleService } from './shared/services/change-title.service';
       },
     }),
   ],
-  providers: [{ provide: TitleStrategy, useClass: ChangeTitleService }],
+  providers: [AuthGuard, TokenExpireGuard, { provide: TitleStrategy, useClass: ChangeTitleService }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

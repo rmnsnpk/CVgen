@@ -10,17 +10,6 @@
   justify-content: center;
   flex-direction: column;
   height: 136px;
-  padding-left: 24px;
-  .projects-label {
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-  .list-label {
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-  .breadcrumbs-label {
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
+  padding: 0 0 15px 24px;
+  gap: 5px;
 }

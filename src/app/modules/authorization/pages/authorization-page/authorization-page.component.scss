@@ -1,0 +1,64 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url('../../../../../assets/img/auth/auth-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+
+  .translate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 12px;
+
+    &-icon {
+      padding: 11px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .auth {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &-block {
+        display: flex;
+        flex-direction: column;
+        &-form {
+          &-items {
+            display: flex;
+            flex-direction: column;
+            &-wrong-auth {
+              color: var(--primary-red);
+              margin-top: 5px;
+            }
+          }
+        }
+
+        &-logo {
+          display: flex;
+          font-display: column;
+          justify-content: center;
+          margin-bottom: 15px;
+          &-img {
+            margin-right: 15px;
+          }
+          &-text {
+            font-family: AvenirRoman, sans-serif;
+            padding-top: 10px;
+            font-style: regular;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+}

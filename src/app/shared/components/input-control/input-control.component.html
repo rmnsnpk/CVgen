@@ -1,8 +1,8 @@
 <div class="control">
-  <label class="control__label">{{ label | translate }}</label>
-  <input class="control__field" type="text" [placeholder]="placeholder | translate" [formControl]="baseControl" nz-input />
+  <label class="control-label">{{ label | translate }}</label>
+  <input class="control-field" [type]="type" [placeholder]="placeholder | translate" [formControl]="baseControl" nz-input />
 
-  <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
+  <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
     {{ baseControl.errors | controlErrors | translate }}
   </p>
 </div>

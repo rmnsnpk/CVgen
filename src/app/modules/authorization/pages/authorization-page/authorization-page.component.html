@@ -1,1 +1,22 @@
-<p>authorization-page works!</p>
+<div class="translate">
+  <span class="translate-icon" nz-icon nzType="global" nzTheme="outline"></span>
+</div>
+
+<div class="container">
+  <div class="auth">
+    <div class="auth-block">
+      <div class="auth-block-logo">
+        <img class="auth-block-logo-img" src="../../../../../assets/img/main/logo.svg" alt="" />
+        <h2 class="auth-block-logo-text">Ant Design</h2>
+      </div>
+      <form [formGroup]="authForm" class="auth-block-form" (ngSubmit)="authSubmit()">
+        <cvg-input-control class="auth-block-form-control" formControlName="email" label="Username"></cvg-input-control>
+        <cvg-input-control class="auth-block-form-control" formControlName="password" type="password" label="Password"></cvg-input-control>
+        <div class="auth-block-form-items">
+          <button nzType="primary" nz-button type="submit">Log in</button>
+          <span class="auth-block-form-items-wrong-auth" *ngIf="isWrongAccount">Username or Password incorrect!</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

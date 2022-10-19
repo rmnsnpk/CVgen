@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -13,4 +13,6 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   standalone: true,
   imports: [NzInputModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule],
 })
-export class InputControlComponent extends BaseControl {}
+export class InputControlComponent extends BaseControl {
+  @Input() public type = 'text';
+}

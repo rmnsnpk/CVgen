@@ -1,13 +1,13 @@
 <div class="control">
-  <label class="control__label">{{ label | translate }}</label>
+  <label class="control-label">{{ label | translate }}</label>
 
   <nz-input-number
-    class="control__field"
+    class="control-field"
     [formControl]="baseControl"
     [nzPlaceHolder]="placeholder | translate"
     [nzStep]="1"
   ></nz-input-number>
-  <p class="control__error_message" *ngIf="baseControl.invalid && baseControl.dirty">
+  <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
     {{ baseControl.errors | controlErrors | translate }}
   </p>
 </div>
