@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, public router: Router) {}
+
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.authService.isLogged()) {
       this.router.navigate([`${AUTH_PATH.fullpath}`]);
@@ -16,6 +18,4 @@ export class AuthGuard implements CanActivate {
     }
     return true;
   }
-
-  constructor(private authService: AuthService, public router: Router) {}
 }

@@ -12,7 +12,8 @@ export class TokenExpireGuard implements CanActivate {
   constructor(private authService: AuthService, public router: Router) {}
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.authService.isExpiredToken()) {
+    if (this.authService.isLogged() && this.authService.isExpiredToken()) {
+      this.authService.logOut();
       this.router.navigate([`${AUTH_PATH.fullpath}`]);
       return false;
     }
