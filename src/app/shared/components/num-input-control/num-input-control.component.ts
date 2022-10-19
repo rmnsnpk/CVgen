@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { BaseControl } from '../../classes/base-control';
 import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
@@ -10,6 +11,6 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   templateUrl: './num-input-control.component.html',
   styleUrls: ['./num-input-control.component.scss'],
 
-  imports: [NzInputNumberModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe],
+  imports: [NzInputNumberModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule],
 })
 export class NumInputControlComponent extends BaseControl implements OnInit {}

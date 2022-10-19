@@ -1,9 +1,9 @@
 <div class="control">
-  <label class="control-label">{{ label }}</label>
-  <nz-select class="control-field" [formControl]="baseControl" nzShowSearch nzAllowClear [nzPlaceHolder]="placeholder">
+  <label class="control-label">{{ label | translate }}</label>
+  <nz-select class="control-field" [formControl]="baseControl" nzShowSearch nzAllowClear [nzPlaceHolder]="placeholder | translate">
     <nz-option *ngFor="let option of options" [nzValue]="option" [nzLabel]="option"></nz-option>
   </nz-select>
   <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
-    {{ baseControl.errors | controlErrors }}
+    {{ baseControl.errors | controlErrors | translate }}
   </p>
 </div>

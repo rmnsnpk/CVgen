@@ -1,9 +1,9 @@
 <div class="control">
-  <label class="control-label">{{ label }}</label>
+  <label class="control-label">{{ label | translate }}</label>
   <nz-textarea-count class="control-area-field" [nzMaxCharacterCount]="100">
-    <textarea rows="4" [formControl]="baseControl" nz-input></textarea>
+    <textarea rows="4" [formControl]="baseControl" nz-input [placeholder]="placeholder | translate"></textarea>
   </nz-textarea-count>
   <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
-    {{ baseControl.errors | controlErrors }}
+    {{ baseControl.errors | controlErrors | translate }}
   </p>
 </div>

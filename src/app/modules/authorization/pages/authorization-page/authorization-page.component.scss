@@ -2,8 +2,7 @@
   width: 100%;
   height: 100%;
   display: block;
-
-  background: url(../../../../../assets/img/auth/auth-bg.png) no-repeat center center fixed;
+  background: url('../../../../../assets/img/auth/auth-bg.png') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
     margin: 12px;
 
     &-icon {
@@ -54,10 +52,9 @@
             margin-right: 15px;
           }
           &-text {
-            font-family: 'AvenirRoman';
+            font-family: AvenirRoman, sans-serif;
             padding-top: 10px;
-
-            font-style: normal;
+            font-style: regular;
             font-weight: 900;
           }
         }
