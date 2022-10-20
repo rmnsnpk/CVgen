@@ -12,6 +12,11 @@
   height: 100%;
   padding: 16px 0 16px 24px;
   background-color: var(--primary-white);
+  .breadcrumbs {
+    &__item {
+      cursor: pointer;
+    }
+  }
   .label {
     font-weight: 500;
     font-size: 20px;

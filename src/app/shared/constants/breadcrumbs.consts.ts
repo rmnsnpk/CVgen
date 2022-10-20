@@ -1,12 +1,12 @@
 import { Breadcrumbs } from '../interfaces/breadcrumbs';
 
-const HOME_BREADCRUMB: Breadcrumbs = {
-  url: '/',
+const HOME: Breadcrumbs = {
+  // url: '/',
   name: 'MAIN.SUBHEADER.NAMES.HOME',
 };
 
 export const EMPLOYEES: Breadcrumbs[] = [
-  HOME_BREADCRUMB,
+  HOME,
   {
     url: '/employee',
     label: 'MAIN.SUBHEADER.LABELS.EMPLOYEES',
@@ -26,7 +26,7 @@ export const EMPLOYEES_ADD: Breadcrumbs[] = [
 ];
 
 export const PROJECTS: Breadcrumbs[] = [
-  HOME_BREADCRUMB,
+  HOME,
   {
     url: '/projects',
     label: 'MAIN.SUBHEADER.LABELS.PROJECTS',
