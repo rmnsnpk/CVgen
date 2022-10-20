@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { breadcrumbsSelector } from 'src/app/ngrx/selectors/breadcrumbs.selector';
+import { Breadcrumbs } from 'src/app/shared/interfaces/breadcrumbs';
 
 @Component({
   selector: 'cvg-subheader',
@@ -6,4 +10,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./subheader.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubheaderComponent {}
+export class SubheaderComponent implements OnInit {
+  currentBreadcrumbs: Breadcrumbs[];
+
+  constructor(private router: Router, private store: Store, private cdR: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.store.select(breadcrumbsSelector).subscribe((breadcrumbs) => {
+      this.cdR.markForCheck();
+      this.currentBreadcrumbs = breadcrumbs;
+    });
+  }
+
+  nav(url: string) {
+    this.router.navigateByUrl(url);
+  }
+}

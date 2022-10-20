@@ -19,10 +19,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { TranslateButtonComponent } from 'src/app/shared/components/translate-button/translate-button.component';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
-import { BreadCrumbsComponent } from './components/subheader/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent, BreadCrumbsComponent],
+  declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

@@ -1,7 +1,30 @@
 {
   "MAIN": {
-    "EMPLOYEES": "Заказчики ",
-    "PROJECTS": "Проекты"
+    "MENU": {
+      "EMPLOYEES": "Заказчики ",
+      "PROJECTS": "Проекты"
+    },
+    "SUBHEADER": {
+      "NAMES": {
+        "HOME": "Домой",
+        "EMPLOYEES": "Заказчики",
+        "PROJECTS": "Проекты",
+        "EMPLOYEES_ADD": "Добавить заказчика",
+        "PROJECTS_ADD": "Добавить проект"
+      },
+      "LABELS": {
+        "EMPLOYEES": "Заказчики",
+        "PROJECTS": "Проекты"
+      },
+      "DESCRIPTIONS": {
+        "EMPLOYEES": "Список заказчиков",
+        "PROJECTS": "Список проектов",
+        "EMPLOYEES_ADD": "Добавить заказчика",
+        "PROJECTS_ADD": "Добавить проект",
+        "EMPLOYEES_EDIT": "Изменить заказчика",
+        "PROJECTS_EDIT": "Изменить проект"
+      }
+    }
   },
   "AUTH": {
     "LOGIN": "Войти"

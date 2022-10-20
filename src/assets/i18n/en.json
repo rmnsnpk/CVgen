@@ -1,7 +1,30 @@
 {
   "MAIN": {
-    "EMPLOYEES": "Employees",
-    "PROJECTS": "Projects"
+    "MENU": {
+      "EMPLOYEES": "Employees",
+      "PROJECTS": "Projects"
+    },
+    "SUBHEADER": {
+      "NAMES": {
+        "HOME": "Home",
+        "EMPLOYEES": "Employees",
+        "PROJECTS": "Projects",
+        "EMPLOYEES_ADD": "Employees add",
+        "PROJECTS_ADD": "Projects add"
+      },
+      "LABELS": {
+        "EMPLOYEES": "Employees",
+        "PROJECTS": "Projects"
+      },
+      "DESCRIPTIONS": {
+        "EMPLOYEES": "Employees list",
+        "PROJECTS": "Projects list",
+        "EMPLOYEES_ADD": "Employees add",
+        "PROJECTS_ADD": "Projects add",
+        "EMPLOYEES_EDIT": "Employees edit",
+        "PROJECTS_EDIT": "Projects edit"
+      }
+    }
   },
   "AUTH": {
     "LOGIN": "Login"

@@ -14,6 +14,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
 import { StateModule } from './state.module';
 import { LanguagesList } from './shared/enums/languages-list.enum';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers, reducers } from './ngrx/reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +37,11 @@ import { LanguagesList } from './shared/enums/languages-list.enum';
         deps: [HttpClient],
       },
     }),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([]),
   ],
   providers: [AuthGuard, TokenExpireGuard],
   bootstrap: [AppComponent],

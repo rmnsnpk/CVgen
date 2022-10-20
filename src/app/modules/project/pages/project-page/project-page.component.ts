@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/breadcrumbs.actions';
+import { PROJECTS } from 'src/app/shared/constants/breadcrumbs.consts';
 
 @Component({
   selector: 'cvg-project-page',
@@ -6,4 +9,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./project-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectPageComponent {}
+export class ProjectPageComponent implements OnInit {
+  constructor(private store: Store) {}
+
+  ngOnInit(): void {
+    this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: PROJECTS }));
+  }
+}

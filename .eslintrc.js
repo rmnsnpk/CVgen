@@ -26,6 +26,7 @@ module.exports = {
       ],
       rules: {
         'import/named': 'off',
+        'no-unused-expressions': 'off',
         'prettier/prettier': [
           'error',
           {
