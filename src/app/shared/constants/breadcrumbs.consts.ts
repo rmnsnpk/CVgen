@@ -1,12 +1,11 @@
 import { Breadcrumbs } from '../interfaces/breadcrumbs';
 
-const HOME: Breadcrumbs = {
-  // url: '/',
+const HOME_BREADCRUMB: Breadcrumbs = {
   name: 'MAIN.SUBHEADER.NAMES.HOME',
 };
 
-export const EMPLOYEES: Breadcrumbs[] = [
-  HOME,
+export const EMPLOYEES_BREADCRUMB: Breadcrumbs[] = [
+  HOME_BREADCRUMB,
   {
     url: '/employee',
     label: 'MAIN.SUBHEADER.LABELS.EMPLOYEES',
@@ -15,8 +14,8 @@ export const EMPLOYEES: Breadcrumbs[] = [
   },
 ];
 
-export const EMPLOYEES_ADD: Breadcrumbs[] = [
-  ...EMPLOYEES,
+export const EMPLOYEES_ADD_BREADCRUMB: Breadcrumbs[] = [
+  ...EMPLOYEES_BREADCRUMB,
   {
     url: '/employee/add',
     label: 'MAIN.SUBHEADER.LABELS.EMPLOYEES',
@@ -25,8 +24,8 @@ export const EMPLOYEES_ADD: Breadcrumbs[] = [
   },
 ];
 
-export const PROJECTS: Breadcrumbs[] = [
-  HOME,
+export const PROJECTS_BREADCRUMB: Breadcrumbs[] = [
+  HOME_BREADCRUMB,
   {
     url: '/projects',
     label: 'MAIN.SUBHEADER.LABELS.PROJECTS',
@@ -35,8 +34,8 @@ export const PROJECTS: Breadcrumbs[] = [
   },
 ];
 
-export const PROJECTS_ADD: Breadcrumbs[] = [
-  ...PROJECTS,
+export const PROJECTS_ADD_BREADCRUMB: Breadcrumbs[] = [
+  ...PROJECTS_BREADCRUMB,
   {
     url: '/projects/add',
     label: 'MAIN.SUBHEADER.LABELS.PROJECTS',

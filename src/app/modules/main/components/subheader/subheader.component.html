@@ -1,9 +1,9 @@
 <div class="container">
-  <nz-breadcrumb class="breadcrumbs">
-    <nz-breadcrumb-item *ngFor="let crumb of currentBreadcrumbs" class="breadcrumbs__item" (click)="nav(crumb?.url)">{{
-      crumb.name | translate
-    }}</nz-breadcrumb-item>
-  </nz-breadcrumb>
+  <div class="breadcrumbs">
+    <a *ngFor="let crumb of currentBreadcrumbs; let index = index" class="breadcrumbs__item" (click)="nav(crumb?.url)"
+      >{{ crumb.name | translate }}<span *ngIf="index < currentBreadcrumbs.length - 1"> / </span>
+    </a>
+  </div>
   <h2 class="label">{{ currentBreadcrumbs.at(-1).label | translate }}</h2>
   <h4 class="description">{{ currentBreadcrumbs.at(-1).description | translate }}</h4>
 </div>

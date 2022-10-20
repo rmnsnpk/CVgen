@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/breadcrumbs.actions';
-import { EMPLOYEES } from 'src/app/shared/constants/breadcrumbs.consts';
+import { EMPLOYEES_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 
 @Component({
   selector: 'cvg-employee.page',
@@ -13,6 +13,6 @@ export class EmployeePageComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: EMPLOYEES }));
+    this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: EMPLOYEES_BREADCRUMB }));
   }
 }

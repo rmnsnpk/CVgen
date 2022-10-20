@@ -14,6 +14,7 @@
   background-color: var(--primary-white);
   .breadcrumbs {
     &__item {
+      color: var(--primary-dark-blue);
       cursor: pointer;
     }
   }
