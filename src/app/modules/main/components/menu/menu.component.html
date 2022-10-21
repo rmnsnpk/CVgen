@@ -2,11 +2,11 @@
   <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
     <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [routerLink]="employeePath.fullpath">
       <span nz-icon nzType="form"></span>
-      <span>{{ 'MAIN.EMPLOYEES' | translate }}</span>
+      <span>{{ 'MAIN.MENU.EMPLOYEES' | translate }}</span>
     </li>
     <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [routerLink]="projectsPath.fullpath">
       <span nz-icon nzType="database"></span>
-      <span>{{ 'MAIN.PROJECTS' | translate }}</span>
+      <span>{{ 'MAIN.MENU.PROJECTS' | translate }}</span>
     </li>
   </ul>
   <div class="menu-expander" (click)="toggleCollapsed()">
