@@ -17,7 +17,7 @@ export class SubheaderComponent implements OnInit {
   constructor(private router: Router, private store: Store, private cdR: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.currentBreadcrumbs = this.store.select(breadcrumbsSelector);
+    this.currentBreadcrumbs = this.store.select(breadcrumbsSelector) as any;
   }
 
   redirect(url: string) {
