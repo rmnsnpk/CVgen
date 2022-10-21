@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { BreadcrumbsState } from 'src/app/shared/interfaces/store.interfaces';
+import { BreadcrumbsState } from '../reducers';
 
 export const breadcrumbsFeatureSelector = createFeatureSelector<BreadcrumbsState>('breadcrumbs');
 
