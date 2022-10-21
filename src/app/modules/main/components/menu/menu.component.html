@@ -1,12 +1,12 @@
 <div class="container">
   <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
-    <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+    <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [routerLink]="employees_path">
       <span nz-icon nzType="form"></span>
-      <span>Employees</span>
+      <span>{{ 'MAIN.MENU.EMPLOYEES' | translate }}</span>
     </li>
-    <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+    <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [routerLink]="projects_path">
       <span nz-icon nzType="database"></span>
-      <span>Projects</span>
+      <span>{{ 'MAIN.MENU.PROJECTS' | translate }}</span>
     </li>
   </ul>
   <div class="menu-expander" (click)="toggleCollapsed()">
