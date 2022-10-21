@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/breadcrumbs.actions';
+import { loadEmployees } from 'src/app/ngrx/actions/employee.actions';
+import { EMPLOYEES_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 import { EmployeeApiService } from 'src/app/shared/services/api/employee.api.service';
-import { loadEmployees } from 'src/app/store/employees/employee.actions';
-import { selectAllEmployees } from 'src/app/store/employees/employee.selectors';
-import { AppState } from 'src/app/store/app.state';
+
 @Component({
   selector: 'cvg-employee.page',
   templateUrl: './employee.page.component.html',
@@ -13,13 +14,14 @@ import { AppState } from 'src/app/store/app.state';
 export class EmployeePageComponent implements OnInit {
   public testEmployees$: any;
 
-  public allEmployees$ = this.store.select(selectAllEmployees);
+  // public allEmployees$ = this.store.select(selectAllEmployees);
 
-  constructor(private readonly store: Store<AppState>, private employeeApiService: EmployeeApiService) {}
+  constructor(private readonly store: Store, private employeeApiService: EmployeeApiService) {}
 
   ngOnInit(): void {
     this.store.dispatch(loadEmployees());
 
     this.testEmployees$ = this.employeeApiService.loadEmployees();
+    this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: EMPLOYEES_BREADCRUMB }));
   }
 }

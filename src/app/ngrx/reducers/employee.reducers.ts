@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { loadEmployeesFailure, loadEmployeesSuccess } from './employee.actions';
+import { loadEmployeesFailure, loadEmployeesSuccess } from '../actions/employee.actions';
 
 export interface EmployeesState {
   employees: [];

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { catchError, map, of, switchMap } from 'rxjs';
-import { EmployeeApiService } from 'src/app/shared/services/api/employee.api.service';
-import { loadEmployees, loadEmployeesFailure, loadEmployeesSuccess } from './employee.actions';
+import { EmployeeApiService } from '../../shared/services/api/employee.api.service';
+import { loadEmployees, loadEmployeesFailure, loadEmployeesSuccess } from '../actions/employee.actions';
 
 @Injectable()
 export class EmployeeEffects {

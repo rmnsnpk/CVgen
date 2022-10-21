@@ -1,10 +1,50 @@
 {
   "MAIN": {
-    "EMPLOYEES": "Employees",
-    "PROJECTS": "Projects"
+    "MENU": {
+      "EMPLOYEES": "Employees",
+      "PROJECTS": "Projects"
+    },
+    "SUBHEADER": {
+      "NAMES": {
+        "HOME": "Home",
+        "EMPLOYEES": "Employees",
+        "PROJECTS": "Projects",
+        "EMPLOYEES_ADD": "Employees add",
+        "PROJECTS_ADD": "Projects add"
+      },
+      "LABELS": {
+        "EMPLOYEES": "Employees",
+        "PROJECTS": "Projects"
+      },
+      "DESCRIPTIONS": {
+        "EMPLOYEES": "Employees list",
+        "PROJECTS": "Projects list",
+        "EMPLOYEES_ADD": "Employees add",
+        "PROJECTS_ADD": "Projects add",
+        "EMPLOYEES_EDIT": "Employees edit",
+        "PROJECTS_EDIT": "Projects edit"
+      }
+    }
   },
   "AUTH": {
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "TITLES": {
+      "MAIN": "Authorization"
+    }
+  },
+  "EMPLOYEES": {
+    "TITLES": {
+      "MAIN": "Employees",
+      "ADD": "Add Employee",
+      "EDIT": "Edit Employee"
+    }
+  },
+  "PROJECTS": {
+    "TITLES": {
+      "MAIN": "Projects",
+      "ADD": "Add project",
+      "EDIT": "Edit project"
+    }
   },
   "BUTTONS": {
     "SAVE": "Save",

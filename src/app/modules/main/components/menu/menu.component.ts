@@ -1,3 +1,4 @@
+import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
@@ -8,6 +9,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class MenuComponent {
   isCollapsed = false;
+
+  public readonly employeePath = EMPLOYEE_PATH;
+
+  public readonly projectsPath = PROJECTS_PATH;
 
   toggleCollapsed() {
     this.isCollapsed = !this.isCollapsed;

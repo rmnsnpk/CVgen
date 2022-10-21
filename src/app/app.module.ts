@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,8 +11,11 @@ import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { LanguagesList } from './shared/enums/languages-list.enum';
+import { TitleStrategy } from '@angular/router';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
+import { TokenExpirationInterceptor } from './shared/interceptors/token-expiration.interceptor';
+import { TokenInterceptor } from './shared/interceptors/token-interceptor';
+import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
 
 @NgModule({
@@ -25,7 +28,6 @@ import { StateModule } from './state.module';
     HttpClientModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      defaultLanguage: LanguagesList.English,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -33,7 +35,21 @@ import { StateModule } from './state.module';
       },
     }),
   ],
-  providers: [AuthGuard, TokenExpireGuard],
+  providers: [
+    AuthGuard,
+    TokenExpireGuard,
+    { provide: TitleStrategy, useClass: ChangeTitleService },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenExpirationInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

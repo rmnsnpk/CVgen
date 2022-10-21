@@ -3,16 +3,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { storeReducers } from './store/constants/store.reducers';
-import { storeEffects } from './store/constants/store.effects';
+import { metaReducers, reducers } from './ngrx/reducers';
+import { effects } from './ngrx/effects';
 @NgModule({
   imports: [
-    StoreModule.forRoot(storeReducers),
-    EffectsModule.forRoot(storeEffects),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
     }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot(effects),
   ],
 })
 export class StateModule {}

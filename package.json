@@ -1,93 +1,95 @@
 {
-    "name": "cvgen",
-    "version": "0.0.0",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
-        "test": "ng test",
-        "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html}' --quiet --fix ",
-        "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html}' --write",
-        "slint": "stylelint --fix \"src/**/*.scss\" --custom-syntax postcss-scss",
-        "e2e": "ng e2e",
-        "prepare": "husky install"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged --relative"
-        }
-    },
-    "lint-staged": {
-        "*.{js,ts}": [
-            "eslint --fix"
-        ],
-        "*.{scss}": [
-            "stylelint --fix"
-        ]
-    },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "^14.1.0",
-        "@angular/common": "^14.1.0",
-        "@angular/compiler": "^14.1.0",
-        "@angular/core": "^14.1.0",
-        "@angular/forms": "^14.1.0",
-        "@angular/platform-browser": "^14.1.0",
-        "@angular/platform-browser-dynamic": "^14.1.0",
-        "@angular/router": "^14.1.0",
-        "@ngrx/effects": "^14.3.2",
-        "@ngrx/store": "^14.3.2",
-        "@ngrx/store-devtools": "^14.3.2",
-        "@ngx-translate/core": "^14.0.0",
-        "@ngx-translate/http-loader": "^7.0.0",
-        "ng-zorro-antd": "^14.0.0",
-        "rxjs": "~7.5.0",
-        "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
-        "tslib": "^2.3.0",
-        "zone.js": "~0.11.4"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "^14.1.1",
-        "@angular-eslint/builder": "14.1.2",
-        "@angular-eslint/eslint-plugin": "14.1.2",
-        "@angular-eslint/eslint-plugin-template": "14.1.2",
-        "@angular-eslint/schematics": "14.1.2",
-        "@angular-eslint/template-parser": "14.1.2",
-        "@angular/cli": "~14.1.1",
-        "@angular/compiler-cli": "^14.1.0",
-        "@sourcegraph/stylelint-config": "^1.4.0",
-        "@types/jasmine": "~4.0.0",
-        "@typescript-eslint/eslint-plugin": "5.37.0",
-        "@typescript-eslint/parser": "5.37.0",
-        "eslint": "^8.23.1",
-        "eslint-config-airbnb-typescript": "^17.0.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-import-resolver-node": "^0.3.6",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "husky": "^8.0.0",
-        "jasmine-core": "~4.2.0",
-        "karma": "~6.4.0",
-        "karma-chrome-launcher": "~3.1.0",
-        "karma-coverage": "~2.2.0",
-        "karma-jasmine": "~5.1.0",
-        "karma-jasmine-html-reporter": "~2.0.0",
-        "lint-staged": "^13.0.3",
-        "postcss-scss": "^4.0.5",
-        "prettier": "^2.7.1",
-        "stylelint": "^14.13.0",
-        "stylelint-config-prettier": "^9.0.3",
-        "stylelint-config-prettier-scss": "^0.0.1",
-        "stylelint-config-sass-guidelines": "^9.0.1",
-        "stylelint-config-standard": "^28.0.0",
-        "stylelint-config-standard-scss": "^5.0.0",
-        "stylelint-order": "^5.0.0",
-        "stylelint-prettier": "^2.0.0",
-        "stylelint-scss": "^4.3.0",
-        "typescript": "~4.7.2"
-    },
-    "eslintIgnore": [
-        "**/*.scss"
+  "name": "cvgen",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html}' --quiet --fix ",
+    "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html}' --write",
+    "slint": "stylelint --fix \"src/**/*.scss\" --custom-syntax postcss-scss",
+    "e2e": "ng e2e",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ],
+    "*.{scss}": [
+      "stylelint --fix"
     ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.1.0",
+    "@angular/common": "^14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/platform-browser": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "@ngrx/effects": "^14.3.2",
+    "@ngrx/store": "^14.3.2",
+    "@ngrx/store-devtools": "^14.3.2",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "ng-zorro-antd": "^14.0.0",
+    "rxjs": "~7.5.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.1.1",
+    "@angular-eslint/builder": "14.1.2",
+    "@angular-eslint/eslint-plugin": "14.1.2",
+    "@angular-eslint/eslint-plugin-template": "14.1.2",
+    "@angular-eslint/schematics": "14.1.2",
+    "@angular-eslint/template-parser": "14.1.2",
+    "@angular/cli": "~14.1.1",
+    "@angular/compiler-cli": "^14.1.0",
+    "@sourcegraph/stylelint-config": "^1.4.0",
+    "@types/jasmine": "~4.0.0",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "jasmine-core": "~4.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "^13.0.3",
+    "postcss-scss": "^4.0.5",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0",
+    "typescript": "~4.7.2"
+  },
+  "eslintIgnore": [
+    "**/*.scss"
+  ]
+
 }
+

@@ -19,13 +19,13 @@ module.exports = {
       extends: [
         'plugin:@angular-eslint/recommended',
         'airbnb-typescript/base',
-        // 'prettier/@typescript-eslint',
         'plugin:import/recommended',
         'plugin:import/typescript',
         'plugin:prettier/recommended',
       ],
       rules: {
         'import/named': 'off',
+        'no-unused-expressions': 'off',
         'prettier/prettier': [
           'error',
           {

@@ -1,15 +1,55 @@
 {
   "MAIN": {
-    "EMPLOYEES": "Заказчики ",
-    "PROJECTS": "Проекты"
+    "MENU": {
+      "EMPLOYEES": "Работники",
+      "PROJECTS": "Проекты"
+    },
+    "SUBHEADER": {
+      "NAMES": {
+        "HOME": "Домой",
+        "EMPLOYEES": "Работники",
+        "PROJECTS": "Проекты",
+        "EMPLOYEES_ADD": "Добавить работника",
+        "PROJECTS_ADD": "Добавить проект"
+      },
+      "LABELS": {
+        "EMPLOYEES": "Работники",
+        "PROJECTS": "Проекты"
+      },
+      "DESCRIPTIONS": {
+        "EMPLOYEES": "Список работников",
+        "PROJECTS": "Список проектов",
+        "EMPLOYEES_ADD": "Добавить работника",
+        "PROJECTS_ADD": "Добавить проект",
+        "EMPLOYEES_EDIT": "Изменить работника",
+        "PROJECTS_EDIT": "Изменить проект"
+      }
+    }
   },
   "AUTH": {
-    "LOGIN": "Войти"
+    "LOGIN": "Войти",
+    "TITLES": {
+      "MAIN": "Авторизация"
+    }
+  },
+  "EMPLOYEES": {
+    "TITLES": {
+      "MAIN": "Заказчики",
+      "ADD": "Добавить заказчика",
+      "EDIT": "Изменить заказчика"
+    }
+  },
+  "PROJECTS": {
+    "TITLES": {
+      "MAIN": "Проекты",
+      "ADD": "Добавить проект",
+      "EDIT": "Изменить проект"
+    }
   },
   "BUTTONS": {
     "SAVE": "Сохранить",
     "CANSEL": "Отмена",
-    "ADD_EMPLOYEE": "Добавить заказчика",
+    "ADD_EMPLOYEE": "Добавить работника",
     "ADD_PROJECT": "Добавить проект",
     "ARCHIEVE": "Архивировать"
   },
