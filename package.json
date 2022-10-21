@@ -90,4 +90,6 @@
   "eslintIgnore": [
     "**/*.scss"
   ]
+
 }
+

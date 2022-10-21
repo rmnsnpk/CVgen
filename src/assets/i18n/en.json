@@ -27,7 +27,24 @@
     }
   },
   "AUTH": {
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "TITLES": {
+      "MAIN": "Authorization"
+    }
+  },
+  "EMPLOYEES": {
+    "TITLES": {
+      "MAIN": "Employees",
+      "ADD": "Add Employee",
+      "EDIT": "Edit Employee"
+    }
+  },
+  "PROJECTS": {
+    "TITLES": {
+      "MAIN": "Projects",
+      "ADD": "Add project",
+      "EDIT": "Edit project"
+    }
   },
   "BUTTONS": {
     "SAVE": "Save",

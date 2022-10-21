@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'cvg-menu',
@@ -10,9 +10,9 @@ import { EMPLOYEE_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-p
 export class MenuComponent {
   isCollapsed = false;
 
-  employees_path = EMPLOYEE_PATH.fullpath;
+  public readonly employeePath = EMPLOYEE_PATH;
 
-  projects_path = PROJECTS_PATH.fullpath;
+  public readonly projectsPath = PROJECTS_PATH;
 
   toggleCollapsed() {
     this.isCollapsed = !this.isCollapsed;
