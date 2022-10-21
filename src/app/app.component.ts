@@ -11,6 +11,5 @@ import { LanguagesList } from './shared/enums/languages-list.enum';
 export class AppComponent {
   constructor(private translateService: TranslateService) {
     translateService.setDefaultLang(LanguagesList.English);
-    translateService.use(LanguagesList.English);
   }
 }

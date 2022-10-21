@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { spinnerSelector } from 'src/app/ngrx/selectors/spinner.selector';
 
 @Component({
   selector: 'cvg-main-page',
@@ -6,4 +9,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./main-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainPageComponent {}
+export class MainPageComponent implements OnInit {
+  public requestsCount: Observable<Number>;
+
+  constructor(private store: Store) {}
+
+  ngOnInit(): void {
+    this.requestsCount = this.store.select(spinnerSelector);
+  }
+}

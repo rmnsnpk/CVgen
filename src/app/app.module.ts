@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,11 +11,11 @@ import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { LanguagesList } from './shared/enums/languages-list.enum';
-import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
-import { StateModule } from './state.module';
 import { TitleStrategy } from '@angular/router';
+import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
 import { ChangeTitleService } from './shared/services/change-title.service';
+import { StateModule } from './state.module';
+import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +27,6 @@ import { ChangeTitleService } from './shared/services/change-title.service';
     HttpClientModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
-      defaultLanguage: LanguagesList.English,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -35,7 +34,12 @@ import { ChangeTitleService } from './shared/services/change-title.service';
       },
     }),
   ],
-  providers: [AuthGuard, TokenExpireGuard, { provide: TitleStrategy, useClass: ChangeTitleService }],
+  providers: [
+    AuthGuard,
+    TokenExpireGuard,
+    { provide: TitleStrategy, useClass: ChangeTitleService },
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,7 +6,10 @@
 
     <div class="main-page">
       <cvg-subheader></cvg-subheader>
-      <router-outlet></router-outlet>
+      <router-outlet *ngIf="(requestsCount | async) === 0; else spinner"></router-outlet>
+      <ng-template #spinner>
+        <cvg-spinner></cvg-spinner>
+      </ng-template>
     </div>
   </div>
 </div>
