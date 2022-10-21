@@ -11,9 +11,9 @@ import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
+import { LanguagesList } from './shared/enums/languages-list.enum';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
 import { StateModule } from './state.module';
-import { LanguagesList } from './shared/enums/languages-list.enum';
 
 @NgModule({
   declarations: [AppComponent],

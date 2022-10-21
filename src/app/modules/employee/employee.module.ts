@@ -10,6 +10,7 @@ import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-emplo
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory'
     EmployeeFormInfoComponent,
   ],
   imports: [
+    CommonModule,
     EmployeeRoutingModule,
     BaseTableModule,
     TranslateModule.forChild({
