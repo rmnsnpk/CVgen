@@ -3,4 +3,3 @@
 
 ng lint --fix
 npm run slint --fix
-git add .
