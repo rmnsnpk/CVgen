@@ -10,6 +10,7 @@ import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-emplo
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { SpinnerComponent } from 'src/app/shared/components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory'
   imports: [
     EmployeeRoutingModule,
     BaseTableModule,
+    SpinnerComponent,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
