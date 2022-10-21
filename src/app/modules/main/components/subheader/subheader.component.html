@@ -1,5 +1,12 @@
 <div class="container">
-  <cvg-breadcrumbs></cvg-breadcrumbs>
-  <h2>Projects</h2>
-  <h4>Project list</h4>
+  <div class="breadcrumbs">
+    <a
+      *ngFor="let crumb of currentBreadcrumbs | async as breadcrumbList; let index = index"
+      class="breadcrumbs__item"
+      (click)="redirect(crumb?.url)"
+      >{{ crumb.name | translate }}<span *ngIf="index < breadcrumbList.length - 1"> / </span>
+    </a>
+  </div>
+  <h2 class="label">{{ (currentBreadcrumbs | async).at(-1).label | translate }}</h2>
+  <h4 class="description">{{ (currentBreadcrumbs | async).at(-1).description | translate }}</h4>
 </div>

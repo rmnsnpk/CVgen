@@ -8,6 +8,7 @@ import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 const routes: Routes = [
   {
     path: AUTH_PATH.path,
+    title: 'AUTH.TITLES.MAIN',
     loadChildren: () => import('./modules/authorization/authorization.module').then((module) => module.AuthorizationModule),
   },
   {

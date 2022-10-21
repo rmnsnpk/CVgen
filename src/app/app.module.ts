@@ -11,9 +11,11 @@ import { TokenExpireGuard } from './shared/guards/token-expire.guard';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
+import { LanguagesList } from './shared/enums/languages-list.enum';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
 import { StateModule } from './state.module';
-import { LanguagesList } from './shared/enums/languages-list.enum';
+import { TitleStrategy } from '@angular/router';
+import { ChangeTitleService } from './shared/services/change-title.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +35,7 @@ import { LanguagesList } from './shared/enums/languages-list.enum';
       },
     }),
   ],
-  providers: [AuthGuard, TokenExpireGuard],
+  providers: [AuthGuard, TokenExpireGuard, { provide: TitleStrategy, useClass: ChangeTitleService }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

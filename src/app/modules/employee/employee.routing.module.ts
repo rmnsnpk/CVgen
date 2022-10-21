@@ -11,10 +11,12 @@ const routes: Routes = [
   {
     path: EMPLOYEE_EDIT_PATH.path,
     component: EditEmployeePageComponent,
+    title: 'EMPLOYEES.TITLES.EDIT',
   },
   {
     path: EMPLOYEE_ADD_PATH.path,
     component: AddEmployeePageComponent,
+    title: 'EMPLOYEES.TITLES.ADD',
   },
 ];
 
