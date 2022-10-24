@@ -1,11 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { loadEmployeesFailure, loadEmployeesSuccess } from '../actions/employee.actions';
 
-export interface EmployeesState {
-  employees: [];
+export interface IEmployeesState {
+  employees: any;
 }
 
-export const initialState: EmployeesState = {
+export const initialState: IEmployeesState = {
   employees: [],
 };
 

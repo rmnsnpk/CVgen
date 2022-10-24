@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
-import { State } from '../reducers';
-import { EmployeesState } from '../reducers/employee.reducers';
+import { IState } from '../reducers';
+import { IEmployeesState } from '../reducers/employee.reducers';
 
-export const selectEmployees = (state: State) => state.employees;
-export const selectAllEmployees = createSelector(selectEmployees, (state: EmployeesState) => state.employees);
+export const selectEmployees = (state: IState) => state.employees;
+export const selectAllEmployees = createSelector(selectEmployees, (state: IEmployeesState) => state.employees);

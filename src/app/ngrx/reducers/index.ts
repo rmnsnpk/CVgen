@@ -1,21 +1,16 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
-import { updateBreadcrumbsReducer } from './breadcrums.reducer';
-import { IBreadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
-import { employeeReducer, EmployeesState } from './employee.reducers';
+import { ICoreState, updateCoreReducer } from './core.reducers';
+import { employeeReducer, IEmployeesState } from './employee.reducers';
 
-export interface State {
-  breadcrumbs: BreadcrumbsState;
-  employees: EmployeesState;
+export interface IState {
+  core: ICoreState;
+  employees: IEmployeesState;
 }
 
-export interface BreadcrumbsState {
-  currentBreadcrumbs: IBreadcrumb[];
-}
-
-export const reducers: ActionReducerMap<State> = {
-  breadcrumbs: updateBreadcrumbsReducer,
+export const reducers: ActionReducerMap<IState> = {
+  core: updateCoreReducer,
   employees: employeeReducer,
 };
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<IState>[] = !environment.production ? [] : [];

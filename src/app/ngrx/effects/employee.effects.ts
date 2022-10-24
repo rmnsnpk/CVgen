@@ -14,7 +14,7 @@ export class EmployeeEffects {
       ofType(loadEmployees),
       switchMap(() =>
         this.employeeApiService.loadEmployees().pipe(
-          map((employees) => loadEmployeesSuccess({ employees: employees })),
+          map((employees) => loadEmployeesSuccess({ employees })),
           catchError((error) => of(loadEmployeesFailure({ error }))),
         ),
       ),

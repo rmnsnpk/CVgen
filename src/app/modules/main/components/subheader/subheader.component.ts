@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { breadcrumbsSelector } from 'src/app/ngrx/selectors/breadcrumbs.selector';
+import { breadcrumbsSelector } from 'src/app/ngrx/selectors/core.selectors';
 import { IBreadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
 
 @Component({

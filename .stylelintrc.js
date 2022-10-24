@@ -8,6 +8,7 @@ module.exports = {
     'no-empty-source': null,
     'rule-empty-line-before': null,
     'selector-pseudo-element-no-unknown': [true, { ignorePseudoElements: ['ng-deep'] }],
+    'color-function-notation': 'legacy',
   },
   overrides: [
     {

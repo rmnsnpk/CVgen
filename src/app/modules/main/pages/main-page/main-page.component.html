@@ -1,12 +1,11 @@
-<div class="page">
+<div class="container">
   <cvg-header></cvg-header>
-
-  <div class="main">
+  <div class="page">
     <cvg-menu></cvg-menu>
-
-    <div class="main-page">
+    <div class="page-main">
       <cvg-subheader></cvg-subheader>
-      <div class="main-page-border-container">
+      <div class="page-main-border-container">
+        <cvg-spinner *ngIf="requestsCount | async"></cvg-spinner>
         <router-outlet></router-outlet>
       </div>
     </div>

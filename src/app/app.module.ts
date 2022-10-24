@@ -17,6 +17,7 @@ import { TokenExpirationInterceptor } from './shared/interceptors/token-expirati
 import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
+import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -49,6 +50,7 @@ import { StateModule } from './state.module';
       useClass: TokenExpirationInterceptor,
       multi: true,
     },
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
