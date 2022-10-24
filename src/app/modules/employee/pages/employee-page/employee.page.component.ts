@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/breadcrumbs.actions';
 import { EMPLOYEES_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
+
 @Component({
   selector: 'cvg-employee.page',
   templateUrl: './employee.page.component.html',
