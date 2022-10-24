@@ -19,6 +19,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { TranslateButtonComponent } from 'src/app/shared/components/translate-button/translate-button.component';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { ProjectsApiService } from 'src/app/shared/services/api/projects.api.service';
 
 @NgModule({
   declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent],
@@ -41,5 +42,6 @@ import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory'
       },
     }),
   ],
+  providers: [ProjectsApiService],
 })
 export class MainModule {}
