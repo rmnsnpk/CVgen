@@ -19,6 +19,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { TranslateButtonComponent } from 'src/app/shared/components/translate-button/translate-button.component';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { SpinnerComponent } from 'src/app/shared/components/spinner/spinner.component';
 
 @NgModule({
   declarations: [MainPageComponent, HeaderComponent, SubheaderComponent, MenuComponent],
@@ -33,6 +34,7 @@ import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory'
     NzMenuModule,
     NzLayoutModule,
     NzToolTipModule,
+    SpinnerComponent,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

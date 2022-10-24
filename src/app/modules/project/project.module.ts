@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { ProjectsFormModule } from 'src/app/shared/components/projects-form/projects-form.module';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
