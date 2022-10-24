@@ -1,8 +1,8 @@
-import { Breadcrumb } from '../interfaces/breadcrumbs';
+import { IBreadcrumb } from '../interfaces/breadcrumbs';
 
-const HOME_BREADCRUMB: Breadcrumb[] = [{ name: 'MAIN.SUBHEADER.NAMES.HOME' }];
+const HOME_BREADCRUMB: IBreadcrumb[] = [{ name: 'MAIN.SUBHEADER.NAMES.HOME' }];
 
-export const EMPLOYEES_BREADCRUMB: Breadcrumb[] = [
+export const EMPLOYEES_BREADCRUMB: IBreadcrumb[] = [
   ...HOME_BREADCRUMB,
   {
     url: '/employee',
@@ -12,7 +12,7 @@ export const EMPLOYEES_BREADCRUMB: Breadcrumb[] = [
   },
 ];
 
-export const EMPLOYEES_ADD_BREADCRUMB: Breadcrumb[] = [
+export const EMPLOYEES_ADD_BREADCRUMB: IBreadcrumb[] = [
   ...EMPLOYEES_BREADCRUMB,
   {
     url: '/employee/add',
@@ -22,7 +22,7 @@ export const EMPLOYEES_ADD_BREADCRUMB: Breadcrumb[] = [
   },
 ];
 
-export const PROJECTS_BREADCRUMB: Breadcrumb[] = [
+export const PROJECTS_BREADCRUMB: IBreadcrumb[] = [
   ...HOME_BREADCRUMB,
   {
     url: '/projects',
@@ -32,7 +32,7 @@ export const PROJECTS_BREADCRUMB: Breadcrumb[] = [
   },
 ];
 
-export const PROJECTS_ADD_BREADCRUMB: Breadcrumb[] = [
+export const PROJECTS_ADD_BREADCRUMB: IBreadcrumb[] = [
   ...PROJECTS_BREADCRUMB,
   {
     url: '/projects/add',

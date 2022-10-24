@@ -1,4 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { Breadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
+import { IBreadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
 
-export const updateBreadcrumbsAction = createAction('[UPDATE] Update breadcrumbs', props<{ breadcrumbsUpdate: Breadcrumb[] }>());
+export const updateBreadcrumbsAction = createAction('[UPDATE] Update breadcrumbs', props<{ breadcrumbsUpdate: IBreadcrumb[] }>());

@@ -1,4 +1,4 @@
-export interface TableColumns {
+export interface ITableColumns {
   name: string;
   fieldName: string;
 }

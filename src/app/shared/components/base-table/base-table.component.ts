@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { TableColumns } from '../../interfaces/table-columns';
+import { ITableColumns } from '../../interfaces/table-columns';
 @Component({
   selector: 'cvg-base-table',
   templateUrl: './base-table.component.html',
   styleUrls: ['./base-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BaseTableComponent {
   @Input() public data: any[];
 
-  @Input() public columns: TableColumns[];
+  @Input() public columns: ITableColumns[];
 
   @Output() public rowClicked = new EventEmitter<any>();
 
