@@ -5,7 +5,7 @@ export interface IEmployeesState {
   employees: any;
 }
 
-export const initialState: IEmployeesState = {
+const initialState: IEmployeesState = {
   employees: [],
 };
 
