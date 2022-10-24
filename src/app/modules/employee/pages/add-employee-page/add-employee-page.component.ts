@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/breadcrumbs.actions';
+import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/core.actions';
 import { EMPLOYEES_ADD_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 
 @Component({

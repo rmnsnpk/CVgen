@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { finalize, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { decreaseRequestsCount, increaseRequestsCount } from 'src/app/ngrx/actions/spinner.actions';
+import { decreaseRequestsCount, increaseRequestsCount } from 'src/app/ngrx/actions/core.actions';
 
 @Injectable()
 export class SpinnerInterceptor implements HttpInterceptor {

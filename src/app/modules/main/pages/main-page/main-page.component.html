@@ -1,15 +1,13 @@
-<div class="page">
+<div class="container">
   <cvg-header></cvg-header>
-
-  <div class="main">
+  <div class="page">
     <cvg-menu></cvg-menu>
-
-    <div class="main-page">
+    <div class="page__main">
       <cvg-subheader></cvg-subheader>
-      <router-outlet *ngIf="(requestsCount | async) === 0; else spinner"></router-outlet>
-      <ng-template #spinner>
-        <cvg-spinner></cvg-spinner>
-      </ng-template>
+      <div class="page__main_block">
+        <cvg-spinner *ngIf="requestsCount | async"></cvg-spinner>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>
