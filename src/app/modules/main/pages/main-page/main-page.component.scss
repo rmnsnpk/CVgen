@@ -16,12 +16,12 @@
     width: 100%;
     height: 100%;
 
-    &__main {
+    &-main {
       display: flex;
       flex-direction: column;
       width: 100%;
       height: 100%;
-      &_block {
+      &-border-container {
         border: 20px solid var(--primary-light-gray);
         position: relative;
         width: 100%;

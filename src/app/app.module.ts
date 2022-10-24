@@ -13,6 +13,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { TitleStrategy } from '@angular/router';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
+import { TokenExpirationInterceptor } from './shared/interceptors/token-expiration.interceptor';
+import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
 import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
@@ -38,6 +40,16 @@ import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
     AuthGuard,
     TokenExpireGuard,
     { provide: TitleStrategy, useClass: ChangeTitleService },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenExpirationInterceptor,
+      multi: true,
+    },
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

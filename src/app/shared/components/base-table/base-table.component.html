@@ -1,1 +1,14 @@
-<div class="container">basetable</div>
+<div class="container">
+  <nz-table #basicTable [nzData]="data">
+    <thead>
+      <tr>
+        <th *ngFor="let item of columns">{{ item.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)="openRow($event)" *ngFor="let data of basicTable.data; trackBy: trackById">
+        <td *ngFor="let item of columns">{{ data[item.fieldName] }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

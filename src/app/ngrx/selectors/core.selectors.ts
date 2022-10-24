@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { CoreState } from '../reducers/core.reducers';
+import { ICoreState } from '../reducers/core.reducers';
 
-export const coreFeatureSelector = createFeatureSelector<CoreState>('core');
+export const coreFeatureSelector = createFeatureSelector<ICoreState>('core');
 
 export const breadcrumbsSelector = createSelector(coreFeatureSelector, (state: any) => state?.currentBreadcrumbs);
 

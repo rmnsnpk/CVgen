@@ -1,13 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
-import { Breadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
+import { IBreadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
 import { decreaseRequestsCount, increaseRequestsCount, updateBreadcrumbsAction } from '../actions/core.actions';
 
-export interface CoreState {
-  currentBreadcrumbs: Breadcrumb[];
+export interface ICoreState {
+  currentBreadcrumbs: IBreadcrumb[];
   requestsCount: number;
 }
 
-const initialState: CoreState = {
+const initialState: ICoreState = {
   currentBreadcrumbs: [],
   requestsCount: 0,
 };
