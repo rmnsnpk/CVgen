@@ -1,1 +1,4 @@
-<cvg-base-table></cvg-base-table>
+<div class="container">
+  <button class="btn" nz-button nzType="primary" (click)="openCreateProject()">{{ 'BUTTONS.ADD_PROJECT' | translate }}</button>
+  <cvg-base-table [data]="projects | projectsTableData" [columns]="columns" (rowClicked)="openEditProject($event)"></cvg-base-table>
+</div>

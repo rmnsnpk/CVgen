@@ -44,6 +44,13 @@
       "MAIN": "Projects",
       "ADD": "Add project",
       "EDIT": "Edit project"
+    },
+    "TABLE_COLUMNS": {
+      "NAME": "Name",
+      "START_DATE": "Start date",
+      "END_DATE": "End date",
+      "TEAM_SIZE": "Team size",
+      "SPECIALIZATIONS": "Specializations"
     }
   },
   "BUTTONS": {
