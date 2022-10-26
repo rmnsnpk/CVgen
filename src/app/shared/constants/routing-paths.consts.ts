@@ -1,4 +1,4 @@
-import { IRouteConfig } from '../interfaces/route.interface';
+import { IRouteConfig } from '../interfaces/route-config.interface';
 
 export const AUTH_PATH: IRouteConfig = {
   path: 'auth',
@@ -13,6 +13,7 @@ export const EMPLOYEE_PATH: IRouteConfig = {
 export const EMPLOYEE_EDIT_PATH: IRouteConfig = {
   path: 'edit/:id',
   fullpath: '/edit/:id',
+  name: 'edit',
 };
 
 export const EMPLOYEE_ADD_PATH: IRouteConfig = {
@@ -28,6 +29,7 @@ export const PROJECTS_PATH: IRouteConfig = {
 export const PROJECTS_EDIT_PATH: IRouteConfig = {
   path: 'edit/:id',
   fullpath: '/edit/:id',
+  name: 'edit',
 };
 
 export const PROJECTS_ADD_PATH: IRouteConfig = {

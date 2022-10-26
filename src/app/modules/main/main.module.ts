@@ -19,6 +19,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { TranslateButtonComponent } from 'src/app/shared/components/translate-button/translate-button.component';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { ProjectsApiService } from 'src/app/shared/services/api/projects.api.service';
 import { SpinnerComponent } from 'src/app/shared/components/spinner/spinner.component';
 
 @NgModule({
@@ -43,5 +44,6 @@ import { SpinnerComponent } from 'src/app/shared/components/spinner/spinner.comp
       },
     }),
   ],
+  providers: [ProjectsApiService],
 })
 export class MainModule {}

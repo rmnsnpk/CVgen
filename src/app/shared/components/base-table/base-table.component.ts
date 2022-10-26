@@ -11,13 +11,13 @@ export class BaseTableComponent {
 
   @Input() public columns: ITableColumns[];
 
-  @Output() public rowClicked = new EventEmitter<any>();
+  @Output() public rowClicked = new EventEmitter<number>();
 
   public trackById(index: any, item: any): string {
     return item.id;
   }
 
-  public openRow(event: any) {
-    this.rowClicked.emit(event);
+  public openRow(index: number) {
+    this.rowClicked.emit(index);
   }
 }
