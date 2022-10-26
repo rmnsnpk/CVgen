@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Directive, DoCheck, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Directive()
 export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
   @Input() label = '';
@@ -14,7 +16,7 @@ export class BaseControl implements ControlValueAccessor, OnInit, DoCheck {
   }
 
   ngOnInit() {
-    this.baseControl.valueChanges.subscribe((value) => {
+    this.baseControl.valueChanges.pipe(untilDestroyed(this)).subscribe((value) => {
       this.onChange(value);
     });
   }
