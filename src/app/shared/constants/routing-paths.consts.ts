@@ -18,7 +18,7 @@ export const EMPLOYEE_EDIT_PATH: IRouteConfig = {
 
 export const EMPLOYEE_ADD_PATH: IRouteConfig = {
   path: 'add',
-  fullpath: 'add',
+  fullpath: '/add',
 };
 
 export const PROJECTS_PATH: IRouteConfig = {
@@ -34,5 +34,5 @@ export const PROJECTS_EDIT_PATH: IRouteConfig = {
 
 export const PROJECTS_ADD_PATH: IRouteConfig = {
   path: 'add',
-  fullpath: 'add',
+  fullpath: '/add',
 };
