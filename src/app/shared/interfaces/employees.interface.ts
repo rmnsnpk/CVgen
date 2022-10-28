@@ -22,7 +22,7 @@ export interface IEmployeeDataSkills {
   id: string;
 }
 
-interface IEmployeeDataLanguage {
+export interface IEmployeeDataLanguage {
   name: string;
   everydayReadingLevel: IListingData;
   everydayWritingLevel: IListingData;

@@ -38,7 +38,7 @@ export class EmployeePageComponent implements OnInit {
   }
 
   openEditEmployee(index: number) {
-    this.router.navigate([EMPLOYEE_PATH.fullpath, EMPLOYEE_EDIT_PATH.path, this.employees[index].id]);
+    this.router.navigate([EMPLOYEE_PATH.fullpath, EMPLOYEE_EDIT_PATH.name, this.employees[index].id]);
   }
 
   openCreateEmployee() {
