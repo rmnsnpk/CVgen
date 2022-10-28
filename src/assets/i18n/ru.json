@@ -37,6 +37,13 @@
       "MAIN": "Заказчики",
       "ADD": "Добавить заказчика",
       "EDIT": "Изменить заказчика"
+    },
+    "TABLE_COLUMNS": {
+      "FIRSTNAME": "Имя",
+      "LASTNAME": "Фамилия",
+      "EMAIL": "Почта",
+      "DEPARTMENT": "Отдел",
+      "SKILLS": "Стек"
     }
   },
   "PROJECTS": {

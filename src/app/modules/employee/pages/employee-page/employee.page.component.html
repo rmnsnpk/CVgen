@@ -1,1 +1,4 @@
-<cvg-base-table></cvg-base-table>
+<div class="container">
+  <button class="btn" nz-button nzType="primary" (click)="openCreateEmployee()">{{ 'BUTTONS.ADD_EMPLOYEE' | translate }}</button>
+  <cvg-base-table [data]="employees | employeeTableData" [columns]="columns" (rowClicked)="openEditEmployee($event)"></cvg-base-table>
+</div>
