@@ -1,6 +1,6 @@
 import { IBreadcrumb } from '../interfaces/breadcrumbs';
 
-const HOME_BREADCRUMB: IBreadcrumb[] = [{ name: 'MAIN.SUBHEADER.NAMES.HOME' }];
+export const HOME_BREADCRUMB: IBreadcrumb[] = [{ name: 'MAIN.SUBHEADER.NAMES.HOME' }];
 
 export const EMPLOYEES_BREADCRUMB: IBreadcrumb[] = [
   ...HOME_BREADCRUMB,

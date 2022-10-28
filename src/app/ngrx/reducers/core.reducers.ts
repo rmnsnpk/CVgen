@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { IBreadcrumb } from 'src/app/shared/interfaces/breadcrumbs';
 import { decreaseRequestsCount, increaseRequestsCount, updateBreadcrumbsAction } from '../actions/core.actions';
+import { HOME_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 
 export interface ICoreState {
   currentBreadcrumbs: IBreadcrumb[];
@@ -8,7 +9,7 @@ export interface ICoreState {
 }
 
 const initialState: ICoreState = {
-  currentBreadcrumbs: [],
+  currentBreadcrumbs: [...HOME_BREADCRUMB],
   requestsCount: 0,
 };
 

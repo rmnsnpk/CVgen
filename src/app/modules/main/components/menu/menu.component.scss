@@ -1,7 +1,9 @@
+@use './../../../../../styles/heights.scss' as *;
+
 :host {
   display: block;
   width: auto;
-  height: 100%;
+  height: calc(100vh - #{$header-height});
   border-right: 1px solid var(--primary-light-gray);
 
   ::ng-deep {

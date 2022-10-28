@@ -24,6 +24,8 @@
   .nz-table {
     height: 100%;
   }
-
-  overflow: hidden;
+  .row {
+    cursor: pointer;
+  }
+   overflow: hidden;
 }
