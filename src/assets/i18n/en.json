@@ -37,6 +37,13 @@
       "MAIN": "Employees",
       "ADD": "Add Employee",
       "EDIT": "Edit Employee"
+    },
+    "TABLE_COLUMNS": {
+      "FIRSTNAME": "FirstName",
+      "LASTNAME": "LastName",
+      "EMAIL": "Email",
+      "DEPARTMENT": "Department",
+      "SKILLS": "Skills"
     }
   },
   "PROJECTS": {
