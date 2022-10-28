@@ -1,7 +1,9 @@
+import { IListingData } from './listing-data';
+
 export interface IProject {
-  responsibilities: IProjectData[];
-  projectRoles: IProjectData[];
-  specializations: IProjectData[];
+  responsibilities: IListingData[];
+  projectRoles: IListingData[];
+  specializations: IListingData[];
   name: string;
   secondName: string;
   startDate: string;
@@ -9,10 +11,5 @@ export interface IProject {
   teamSize: number;
   tasksPerformed: string;
   description: string;
-  id: string;
-}
-
-export interface IProjectData {
-  name: string;
   id: string;
 }

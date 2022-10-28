@@ -1,3 +1,5 @@
+import { IListingData } from './listing-data';
+
 export interface IEmployee {
   skills: IEmployeeDataSkills[];
   languages: IEmployeeDataLanguage[];
@@ -7,30 +9,25 @@ export interface IEmployee {
   institution: string;
   diplomaProfession: string;
   department: string;
-  role: IEmployeeData;
-  id: string;
-}
-
-interface IEmployeeData {
-  name: string;
+  role: IListingData;
   id: string;
 }
 
 export interface IEmployeeDataSkills {
   name: string;
-  category: IEmployeeData;
+  category: IListingData;
   experience: number;
   lastUsed: number;
-  level: IEmployeeData;
+  level: IListingData;
   id: string;
 }
 
 interface IEmployeeDataLanguage {
   name: string;
-  everydayReadingLevel: IEmployeeData;
-  everydayWritingLevel: IEmployeeData;
-  everydaySpeakingLevel: IEmployeeData;
-  professionalReadingLevel: IEmployeeData;
-  professionalWritingLevel: IEmployeeData;
-  professionalSpeakingLevel: IEmployeeData;
+  everydayReadingLevel: IListingData;
+  everydayWritingLevel: IListingData;
+  everydaySpeakingLevel: IListingData;
+  professionalReadingLevel: IListingData;
+  professionalWritingLevel: IListingData;
+  professionalSpeakingLevel: IListingData;
 }
