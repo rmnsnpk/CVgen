@@ -4,6 +4,7 @@ import { ICoreState, updateCoreReducer } from './core.reducers';
 import { employeeReducer, IEmployeesState } from './employee.reducers';
 import { ILanguagesState, languagesReducer } from './languages.reducers';
 import { IProjectsState, projectsReducer } from './projects.reducers';
+import { IRolesState, rolesReducer } from './roles.reducer';
 import { ISkillsState, skillsReducer } from './skills.reducers';
 
 export interface IState {
@@ -12,6 +13,7 @@ export interface IState {
   projects: IProjectsState;
   languages: ILanguagesState;
   skills: ISkillsState;
+  roles: IRolesState;
 }
 
 export const reducers: ActionReducerMap<IState> = {
@@ -20,6 +22,7 @@ export const reducers: ActionReducerMap<IState> = {
   projects: projectsReducer,
   languages: languagesReducer,
   skills: skillsReducer,
+  roles: rolesReducer,
 };
 
 export const metaReducers: MetaReducer<IState>[] = !environment.production ? [] : [];

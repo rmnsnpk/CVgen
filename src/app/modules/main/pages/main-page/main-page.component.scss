@@ -24,7 +24,7 @@
       height: 100%;
       &-border-container {
         border: 20px solid var(--primary-light-gray);
-        border-bottom-width: 0px;
+        border-bottom-width: 0;
         position: relative;
         width: 100%;
         height: calc(100vh - #{$header-height} - #{$subheader-height});

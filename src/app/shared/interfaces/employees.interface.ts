@@ -31,3 +31,8 @@ export interface IEmployeeDataLanguage {
   professionalWritingLevel: IListingData;
   professionalSpeakingLevel: IListingData;
 }
+
+export interface IEmployeeDataRoles {
+  name: string;
+  id: string;
+}

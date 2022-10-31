@@ -18,6 +18,7 @@ import { EmployeeFormComponent } from './components/employee-form/employee-form.
 import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee-page.component';
 import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-employee-page.component';
 import { EmployeeTableDataPipe } from './pipes/employee-table-data.pipe';
+import { SelectControlComponent } from 'src/app/shared/components/select-control/select-control.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,11 @@ import { EmployeeTableDataPipe } from './pipes/employee-table-data.pipe';
     EmployeeFormInfoComponent,
   ],
   imports: [
+    CommonModule,
     MultiSelectControlComponent,
     InputControlComponent,
+    SelectControlComponent,
     ReactiveFormsModule,
-    CommonModule,
     EmployeeRoutingModule,
     NzTabsModule,
     NzButtonModule,
