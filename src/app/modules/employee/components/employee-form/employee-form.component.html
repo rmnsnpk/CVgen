@@ -1,12 +1,15 @@
-<nz-tabset class="tabs">
-  <nz-tab nzTitle="Info">
-    <cvg-employee-form-info></cvg-employee-form-info>
-  </nz-tab>
-  <nz-tab nzTitle="CV">
-    <cvg-employee-form-cv></cvg-employee-form-cv>
-  </nz-tab>
-</nz-tabset>
-<div class="buttons">
-  <button class="buttons-item" nz-button nzType="primary" (click)="submitFormValue()">Add</button>
-  <button class="buttons-item" nz-button nzType="default" (click)="cancelFormSubmit()">Cancel</button>
+<div class="container">
+  <nz-tabset class="tabs">
+    <nz-tab nzTitle="Info">
+      <cvg-employee-form-info></cvg-employee-form-info>
+    </nz-tab>
+    <nz-tab nzTitle="CV">
+      <cvg-employee-form-cv></cvg-employee-form-cv>
+    </nz-tab>
+  </nz-tabset>
+  <div class="buttons">
+    <button *ngIf="isEdit" class="buttons-item" nz-button nzType="primary" (click)="saveFormValue()">Save</button>
+    <button *ngIf="!isEdit" class="buttons-item" nz-button nzType="primary" (click)="submitFormValue()">Add</button>
+    <button class="buttons-item" nz-button nzType="default" (click)="cancelFormSubmit()">Cancel</button>
+  </div>
 </div>

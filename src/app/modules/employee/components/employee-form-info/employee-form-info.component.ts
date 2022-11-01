@@ -34,7 +34,7 @@ export class EmployeeFormInfoComponent implements OnInit {
     private store: Store,
     private skillsApi: SkillsApiService,
     private languageApi: LanguagesApiService,
-    private cdr: ChangeDetectorRef,
+    public cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -80,12 +80,10 @@ export class EmployeeFormInfoComponent implements OnInit {
       diplomaProfession: ['', Validators.required],
       role: ['', Validators.required],
     });
+  }
 
-    this.employeeForm.valueChanges.subscribe(() => {
-      if (this.employeeForm.invalid) {
-        markAllAsDirty(this.employeeForm);
-        return;
-      }
-    });
+  public markFormAsDirty() {
+    markAllAsDirty(this.employeeForm);
+    this.cdr.markForCheck();
   }
 }

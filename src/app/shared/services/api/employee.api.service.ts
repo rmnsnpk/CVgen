@@ -13,6 +13,10 @@ export class EmployeeApiService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
+  loadSelectedEmployee(id: any) {
+    return this.http.get(environment.apiURL + this.endPoints.usersHttp + `?id=${id}`);
+  }
+
   loadEmployees() {
     return this.http.get(environment.apiURL + this.endPoints.usersHttp);
   }
@@ -20,6 +24,6 @@ export class EmployeeApiService {
   postEmployee(formValue: any) {
     console.log('post empoyee', formValue);
 
-    return this.http.post(environment.apiURL + this.endPoints.usersHttp, formValue).subscribe();
+    return this.http.post(environment.apiURL + this.endPoints.usersHttp, formValue);
   }
 }
