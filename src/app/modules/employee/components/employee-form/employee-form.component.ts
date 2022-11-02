@@ -2,9 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, V
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { createEmployee, loadSelectedEmployee } from 'src/app/ngrx/actions/employee.actions';
-import { getSelectedEmployeeSelector } from 'src/app/ngrx/selectors/employee.selectors';
 import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
 import { EmployeeApiService } from 'src/app/shared/services/api/employee.api.service';
 import { EmployeeFormCvComponent } from '../employee-form-cv/employee-form-cv.component';
@@ -28,7 +26,7 @@ export class EmployeeFormComponent implements OnInit {
 
   public roles: any;
 
-  public selectedEmployee: Observable<Object>;
+  public selectedEmployee: any;
 
   constructor(
     private employeeApiService: EmployeeApiService,
@@ -63,11 +61,7 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit() {
     if (this.isEdit) {
       const employeeId = this.route.snapshot.paramMap.get('id');
-
       this.store.dispatch(loadSelectedEmployee({ selectedEmployee: employeeId }));
-      this.selectedEmployee = this.store.select(getSelectedEmployeeSelector);
-
-      // найти способ патчить велью во вьючаелд this.InfoForm.employeeForm.patchValue()
     }
   }
 }

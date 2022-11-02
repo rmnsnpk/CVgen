@@ -13,7 +13,7 @@ export interface IEmployeesState {
 
 const initialState: IEmployeesState = {
   employees: [],
-  selectedEmployee: [],
+  selectedEmployee: {},
 };
 
 export const employeeReducer = createReducer(

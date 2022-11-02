@@ -40,7 +40,7 @@ export class ProjectPageComponent implements OnInit {
     this.router.navigate([PROJECTS_PATH.path, PROJECTS_ADD_PATH.path]);
   }
 
-  openEditProject(index: number) {
-    this.router.navigate([PROJECTS_PATH.fullpath, PROJECTS_EDIT_PATH.name, this.projects[index].id]);
+  openEditProject(id: string) {
+    this.router.navigate([PROJECTS_PATH.fullpath, PROJECTS_EDIT_PATH.name, id]);
   }
 }
