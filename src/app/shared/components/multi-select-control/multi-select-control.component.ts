@@ -21,8 +21,4 @@ export class MultiSelectControlComponent extends BaseControl {
   @Input() valueField = 'id';
 
   @Input() labelField = 'name';
-
-  public compareFn(option1: any, option2: any): boolean {
-    return option1 && option2 ? option1?.id === option2 : option1 === option2?.id;
-  }
 }

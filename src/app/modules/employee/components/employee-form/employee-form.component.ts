@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UntilDestroy } from '@ngneat/until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { createEmployee, loadSelectedEmployee } from 'src/app/ngrx/actions/employee.actions';
+import { getSelectedEmployeeSelector } from 'src/app/ngrx/selectors/employee.selectors';
 import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
 import { EmployeeApiService } from 'src/app/shared/services/api/employee.api.service';
 import { EmployeeFormCvComponent } from '../employee-form-cv/employee-form-cv.component';
@@ -62,6 +63,13 @@ export class EmployeeFormComponent implements OnInit {
     if (this.isEdit) {
       const employeeId = this.route.snapshot.paramMap.get('id');
       this.store.dispatch(loadSelectedEmployee({ selectedEmployee: employeeId }));
+      this.store
+        .select(getSelectedEmployeeSelector)
+        .pipe(untilDestroyed(this))
+        .subscribe((data) => {
+          this.selectedEmployee = data;
+          this.cdr.markForCheck();
+        });
     }
   }
 }

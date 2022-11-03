@@ -17,3 +17,5 @@ export const loadSelectedEmployee = createAction('[EMPLOYEES] Load Selected Empl
 export const loadSelectedEmployeeSuccess = createAction('[EMPLOYEES] Load Selected Employees Success', props<{ selectedEmployee: any }>());
 
 export const loadSelectedEmployeeFailure = createAction('[EMPLOYEES] Load Selected Employees Failure', props<{ error: string }>());
+
+export const deleteSelectedEmployee = createAction('[EMPLOYEES] Delete Selected Employees');

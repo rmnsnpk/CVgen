@@ -1,13 +1,7 @@
 <div class="control">
   <label class="control-label">{{ label | translate }}</label>
 
-  <nz-select
-    [formControl]="baseControl"
-    [compareWith]="compareFn"
-    [nzPlaceHolder]="placeholder | translate"
-    nzMode="multiple"
-    class="control-field"
-  >
+  <nz-select [formControl]="baseControl" [nzPlaceHolder]="placeholder | translate" nzMode="multiple" class="control-field">
     <nz-option *ngFor="let option of options" [nzLabel]="option[labelField]" [nzValue]="option[valueField]"></nz-option>
   </nz-select>
   <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">

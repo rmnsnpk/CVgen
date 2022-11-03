@@ -1,19 +1,21 @@
 import { createReducer, on } from '@ngrx/store';
+import { IEmployee } from 'src/app/shared/interfaces/employees.interface';
 import {
   loadEmployeesFailure,
   loadEmployeesSuccess,
   loadSelectedEmployeeSuccess,
   loadSelectedEmployeeFailure,
+  deleteSelectedEmployee,
 } from '../actions/employee.actions';
 
 export interface IEmployeesState {
-  employees: any;
-  selectedEmployee: any;
+  employees: IEmployee[];
+  selectedEmployee: IEmployee;
 }
 
 const initialState: IEmployeesState = {
   employees: [],
-  selectedEmployee: {},
+  selectedEmployee: null,
 };
 
 export const employeeReducer = createReducer(
@@ -32,5 +34,9 @@ export const employeeReducer = createReducer(
   })),
   on(loadSelectedEmployeeFailure, (state) => ({
     ...state,
+  })),
+  on(deleteSelectedEmployee, (state) => ({
+    ...state,
+    selectedEmployee: null,
   })),
 );

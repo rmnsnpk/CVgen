@@ -11,6 +11,7 @@ export interface IEmployee {
   department: string;
   role: IListingData;
   id: string;
+  password?: string;
 }
 
 export interface IEmployeeDataSkills {
@@ -34,5 +35,18 @@ export interface IEmployeeDataLanguage {
 
 export interface IEmployeeDataRoles {
   name: string;
+  id: string;
+}
+
+export interface ISelectedEmployee {
+  skills: string[];
+  languages: string[];
+  firstName: string;
+  lastName: string;
+  email: string;
+  institution: string;
+  diplomaProfession: string;
+  department: string;
+  role: string[];
   id: string;
 }

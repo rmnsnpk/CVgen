@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
+import { deleteSelectedEmployee } from 'src/app/ngrx/actions/employee.actions';
 import { loadLanguages } from 'src/app/ngrx/actions/languages.actions';
 import { loadRoles } from 'src/app/ngrx/actions/roles.action';
 import { loadSkills } from 'src/app/ngrx/actions/skills.actions';
-import { getSelectedEmployeeSelector } from 'src/app/ngrx/selectors/employee.selectors';
 import { allLanguagesSelector } from 'src/app/ngrx/selectors/languages.selectors';
 import { allRolesSelector } from 'src/app/ngrx/selectors/roles.selectors';
 import { allSkillsSelector } from 'src/app/ngrx/selectors/skills.selectors';
@@ -21,7 +21,7 @@ import { markAllAsDirty } from 'src/app/shared/utils/mark-all-as-dirty';
   styleUrls: ['./employee-form-info.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EmployeeFormInfoComponent implements OnInit, OnChanges {
+export class EmployeeFormInfoComponent implements OnInit, OnChanges, OnDestroy {
   @Input() selectedEmployee: IEmployee;
 
   public employeeForm!: FormGroup;
@@ -38,7 +38,20 @@ export class EmployeeFormInfoComponent implements OnInit, OnChanges {
     private skillsApi: SkillsApiService,
     private languageApi: LanguagesApiService,
     public cdr: ChangeDetectorRef,
-  ) {}
+  ) {
+    this.employeeForm = this.fb.group({
+      password: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      department: ['', Validators.required],
+      skills: [[], Validators.required],
+      languages: [[], Validators.required],
+      institution: ['', Validators.required],
+      diplomaProfession: ['', Validators.required],
+      role: ['', Validators.required],
+    });
+  }
 
   ngOnInit() {
     this.store.dispatch(loadLanguages());
@@ -70,30 +83,21 @@ export class EmployeeFormInfoComponent implements OnInit, OnChanges {
         this.cdr.markForCheck();
         this.roles = roles.map((item: IEmployeeDataRoles) => item);
       });
-
-    this.employeeForm = this.fb.group({
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      department: ['', Validators.required],
-      skills: [[], Validators.required],
-      languages: [[], Validators.required],
-      institution: ['', Validators.required],
-      diplomaProfession: ['', Validators.required],
-      role: ['', Validators.required],
-    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['selectedEmployee'] && changes['selectedEmployee'].currentValue && this.employeeForm) {
-      this.store.select(getSelectedEmployeeSelector).subscribe((data) => this.employeeForm.patchValue(data));
-      this.cdr.markForCheck();
+    if (changes['selectedEmployee'] && changes['selectedEmployee'].currentValue) {
+      this.employeeForm.patchValue(this.selectedEmployee);
+      this.cdr.detectChanges();
     }
   }
 
-  public markFormAsDirty() {
+  public markFormAsDirty(): void {
     markAllAsDirty(this.employeeForm);
     this.cdr.markForCheck();
+  }
+
+  ngOnDestroy(): void {
+    this.store.dispatch(deleteSelectedEmployee());
   }
 }

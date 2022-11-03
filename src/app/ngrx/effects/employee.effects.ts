@@ -45,7 +45,7 @@ export class EmployeeEffects {
   createEmployee$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createEmployee),
-      switchMap((employ) =>
+      switchMap((employ: any) =>
         this.employeeApiService.postEmployee(employ).pipe(
           map((employee) => createEmployeeSuccess({ employee })),
           catchError((error) => of(createEmployeeFailure({ error }))),
