@@ -12,6 +12,9 @@ import {
   loadEmployeesSuccess,
   loadSelectedEmployee,
   loadSelectedEmployeeSuccess,
+  updateEmployeeFailure,
+  updateEmployeeSuccess,
+  updateEmployee,
 } from '../actions/employee.actions';
 
 @Injectable()
@@ -23,7 +26,7 @@ export class EmployeeEffects {
       ofType(loadEmployees),
       switchMap(() =>
         this.employeeApiService.loadEmployees().pipe(
-          map((employees) => loadEmployeesSuccess({ employees })),
+          map((employees: any) => loadEmployeesSuccess({ employees })),
           catchError((error) => of(loadEmployeesFailure({ error }))),
         ),
       ),
@@ -35,7 +38,7 @@ export class EmployeeEffects {
       ofType(loadSelectedEmployee),
       switchMap((id) =>
         this.employeeApiService.loadSelectedEmployee(id.selectedEmployee).pipe(
-          map((selectedEmployee) => loadSelectedEmployeeSuccess({ selectedEmployee })),
+          map((selectedEmployee: any) => loadSelectedEmployeeSuccess({ selectedEmployee })),
           catchError((error) => of(loadEmployeesFailure({ error }))),
         ),
       ),
@@ -45,10 +48,22 @@ export class EmployeeEffects {
   createEmployee$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createEmployee),
-      switchMap((employ: any) =>
-        this.employeeApiService.postEmployee(employ).pipe(
+      switchMap((data: any) =>
+        this.employeeApiService.postEmployee(data).pipe(
           map((employee) => createEmployeeSuccess({ employee })),
           catchError((error) => of(createEmployeeFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  updateEmployee$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateEmployee),
+      switchMap((data) =>
+        this.employeeApiService.updateEmployee(data).pipe(
+          map((employee) => updateEmployeeSuccess({ employee })),
+          catchError((error) => of(updateEmployeeFailure({ error }))),
         ),
       ),
     ),

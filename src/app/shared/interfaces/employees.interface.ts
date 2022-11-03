@@ -10,7 +10,7 @@ export interface IEmployee {
   diplomaProfession: string;
   department: string;
   role: IListingData;
-  id: string;
+  id?: string;
   password?: string;
 }
 
@@ -48,5 +48,5 @@ export interface ISelectedEmployee {
   diplomaProfession: string;
   department: string;
   role: string[];
-  id: string;
+  id?: string;
 }

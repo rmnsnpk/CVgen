@@ -8,7 +8,7 @@
     </nz-tab>
   </nz-tabset>
   <div class="buttons">
-    <button *ngIf="isEdit" class="buttons-item" nz-button nzType="primary" (click)="saveFormValue()">Save</button>
+    <button *ngIf="isEdit" class="buttons-item" nz-button nzType="primary" (click)="updateFormValue()">Save</button>
     <button *ngIf="!isEdit" class="buttons-item" nz-button nzType="primary" (click)="submitFormValue()">Add</button>
     <button class="buttons-item" nz-button nzType="default" (click)="cancelFormSubmit()">Cancel</button>
   </div>

@@ -26,11 +26,11 @@ export class EmployeeFormInfoComponent implements OnInit, OnChanges, OnDestroy {
 
   public employeeForm!: FormGroup;
 
-  public languages: [];
+  public languages: IEmployeeDataLanguage[];
 
-  public skills: [];
+  public skills: IEmployeeDataSkills[];
 
-  public roles: [];
+  public roles: IEmployeeDataRoles[];
 
   constructor(
     private fb: FormBuilder,
@@ -50,6 +50,7 @@ export class EmployeeFormInfoComponent implements OnInit, OnChanges, OnDestroy {
       institution: ['', Validators.required],
       diplomaProfession: ['', Validators.required],
       role: ['', Validators.required],
+      id: [''],
     });
   }
 
@@ -85,8 +86,9 @@ export class EmployeeFormInfoComponent implements OnInit, OnChanges, OnDestroy {
       });
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedEmployee'] && changes['selectedEmployee'].currentValue) {
+      this.employeeForm.controls['password'].disable();
       this.employeeForm.patchValue(this.selectedEmployee);
       this.cdr.detectChanges();
     }

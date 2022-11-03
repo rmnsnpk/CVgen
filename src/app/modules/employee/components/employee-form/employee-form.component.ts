@@ -2,9 +2,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, V
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { createEmployee, loadSelectedEmployee } from 'src/app/ngrx/actions/employee.actions';
+import { createEmployee, loadSelectedEmployee, updateEmployee } from 'src/app/ngrx/actions/employee.actions';
 import { getSelectedEmployeeSelector } from 'src/app/ngrx/selectors/employee.selectors';
 import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
+import { IEmployee, ISelectedEmployee } from 'src/app/shared/interfaces/employees.interface';
 import { EmployeeApiService } from 'src/app/shared/services/api/employee.api.service';
 import { EmployeeFormCvComponent } from '../employee-form-cv/employee-form-cv.component';
 import { EmployeeFormInfoComponent } from '../employee-form-info/employee-form-info.component';
@@ -27,7 +28,9 @@ export class EmployeeFormComponent implements OnInit {
 
   public roles: any;
 
-  public selectedEmployee: any;
+  public selectedEmployee: ISelectedEmployee | IEmployee | any;
+
+  public employeeId: string;
 
   constructor(
     private employeeApiService: EmployeeApiService,
@@ -37,32 +40,34 @@ export class EmployeeFormComponent implements OnInit {
     private cdr: ChangeDetectorRef,
   ) {}
 
-  public submitFormValue() {
+  public submitFormValue(): void {
     if (this.InfoForm.employeeForm.invalid) {
       this.InfoForm.markFormAsDirty();
       return;
     }
 
     this.mergedForm = this.InfoForm.employeeForm.getRawValue();
-
     this.store.dispatch(createEmployee(this.mergedForm));
   }
 
-  public saveFormValue() {
+  public updateFormValue(): void {
     if (this.InfoForm.employeeForm.invalid) {
       this.InfoForm.markFormAsDirty();
       return;
     }
+
+    this.mergedForm = this.InfoForm.employeeForm.getRawValue();
+    this.store.dispatch(updateEmployee(this.mergedForm));
   }
 
-  public cancelFormSubmit() {
+  public cancelFormSubmit(): void {
     this.router.navigate([EMPLOYEE_PATH.path]);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.isEdit) {
-      const employeeId = this.route.snapshot.paramMap.get('id');
-      this.store.dispatch(loadSelectedEmployee({ selectedEmployee: employeeId }));
+      this.employeeId = this.route.snapshot.paramMap.get('id');
+      this.store.dispatch(loadSelectedEmployee({ selectedEmployee: this.employeeId }));
       this.store
         .select(getSelectedEmployeeSelector)
         .pipe(untilDestroyed(this))

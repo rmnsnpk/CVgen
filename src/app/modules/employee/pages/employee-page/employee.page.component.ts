@@ -37,11 +37,11 @@ export class EmployeePageComponent implements OnInit {
       });
   }
 
-  openEditEmployee(id: string) {
+  public openEditEmployee(id: string) {
     this.router.navigate([EMPLOYEE_PATH.fullpath, EMPLOYEE_EDIT_PATH.name, id]);
   }
 
-  openCreateEmployee() {
+  public openCreateEmployee(): void {
     this.router.navigate([EMPLOYEE_PATH.fullpath, EMPLOYEE_ADD_PATH.path]);
   }
 }
