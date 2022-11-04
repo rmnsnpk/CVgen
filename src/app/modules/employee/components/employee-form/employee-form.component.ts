@@ -58,6 +58,8 @@ export class EmployeeFormComponent implements OnInit {
 
     this.mergedForm = this.InfoForm.employeeForm.getRawValue();
     this.store.dispatch(updateEmployee(this.mergedForm));
+
+    // сделать редирект
   }
 
   public cancelFormSubmit(): void {

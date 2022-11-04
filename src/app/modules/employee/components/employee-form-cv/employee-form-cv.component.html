@@ -1,1 +1,18 @@
-<p>employee-form-cv works!</p>
+<div class="container">
+  <div class="sidebar">
+    <nz-tabset
+      [nzSize]="'large'"
+      [nzTabPosition]="tabPosition"
+      [(nzSelectedIndex)]="selectedIndex"
+      nzType="editable-card"
+      (nzAdd)="newTab()"
+      (nzClose)="closeTab($event)"
+    >
+      <nz-tab *ngFor="let tab of tabs" nzClosable [nzTitle]="tab">
+        <ng-content></ng-content>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+
+  <div class="mainpage"></div>
+</div>
