@@ -9,12 +9,17 @@
         "HOME": "Home",
         "EMPLOYEES": "Employees",
         "PROJECTS": "Projects",
-        "EMPLOYEES_ADD": "Employees add",
-        "PROJECTS_ADD": "Projects add"
+        "EMPLOYEES_ADD": "Add employee",
+        "PROJECTS_ADD": "Add project",
+        "PROJECTS_EDIT": "Edit project"
       },
       "LABELS": {
         "EMPLOYEES": "Employees",
-        "PROJECTS": "Projects"
+        "PROJECTS": "Projects",
+        "PROJECTS_ADD": "Add project",
+        "EMPLOYEES_ADD": "Add employee",
+        "PROJECTS_EDIT": "Edit project",
+        "EMPLOYEES_EDIT": "Edit employee"
       },
       "DESCRIPTIONS": {
         "EMPLOYEES": "Employees list",
@@ -86,7 +91,8 @@
       "STACK": "Tech stack",
       "ROLES": "Roles",
       "DESCRIPTION": "Description",
-      "RESPONSIBILITIES": "Responsibilities"
+      "RESPONSIBILITIES": "Responsibilities",
+      "TASKS": "Tasks"
     },
     "PLACEHOLDERS": {
       "NAME": "Enter your first name",

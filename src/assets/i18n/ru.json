@@ -10,11 +10,16 @@
         "EMPLOYEES": "Работники",
         "PROJECTS": "Проекты",
         "EMPLOYEES_ADD": "Добавить работника",
-        "PROJECTS_ADD": "Добавить проект"
+        "PROJECTS_ADD": "Добавить проект",
+        "PROJECTS_EDIT": "Изменить проект"
       },
       "LABELS": {
         "EMPLOYEES": "Работники",
-        "PROJECTS": "Проекты"
+        "PROJECTS": "Проекты",
+        "PROJECTS_ADD": "Добавить проект",
+        "EMPLOYEES_ADD": "Добавить работника",
+        "PROJECTS_EDIT": "Изменить проект",
+        "EMPLOYEES_EDIT": "Изменить работника"
       },
       "DESCRIPTIONS": {
         "EMPLOYEES": "Список работников",
@@ -86,7 +91,8 @@
       "STACK": "Технологии",
       "ROLES": "Роли",
       "DESCRIPTION": "Описание",
-      "RESPONSIBILITIES": "Обязанности"
+      "RESPONSIBILITIES": "Обязанности",
+      "TASKS": "Задачи"
     },
     "PLACEHOLDERS": {
       "NAME": "Введите ваше имя",

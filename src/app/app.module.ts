@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -13,11 +13,15 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { TitleStrategy } from '@angular/router';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
+import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 import { TokenExpirationInterceptor } from './shared/interceptors/token-expiration.interceptor';
 import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
-import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
+
+import en from '@angular/common/locales/en';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+registerLocaleData(en);
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,6 +55,7 @@ import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
       multi: true,
     },
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+    { provide: NZ_I18N, useValue: en_US },
   ],
   bootstrap: [AppComponent],
 })

@@ -7,7 +7,5 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeFormComponent implements OnInit {
-  ngOnInit(): void {
-    console.log('xxx');
-  }
+  ngOnInit(): void {}
 }

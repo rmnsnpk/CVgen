@@ -1,1 +1,24 @@
-<p>projects-form works!</p>
+<form class="form" [formGroup]="projectsForm">
+  <cvg-input-control formControlName="name" label="CONTROLS.LABELS.NAME"></cvg-input-control>
+  <cvg-input-control formControlName="secondName" label="CONTROLS.LABELS.SURNAME"></cvg-input-control>
+  <cvg-num-input-control formControlName="teamSize" label="CONTROLS.LABELS.SIZE"></cvg-num-input-control>
+  <cvg-date-picker-control formControlName="startDate" label="CONTROLS.LABELS.START"></cvg-date-picker-control>
+  <cvg-date-picker-control formControlName="endDate" label="CONTROLS.LABELS.END"></cvg-date-picker-control>
+  <cvg-multi-select-control
+    formControlName="projectRoles"
+    label="CONTROLS.LABELS.ROLES"
+    [options]="projectRoles$ | async"
+  ></cvg-multi-select-control>
+  <cvg-multi-select-control
+    formControlName="specializations"
+    label="CONTROLS.LABELS.SPECIALIZATION"
+    [options]="specializations$ | async"
+  ></cvg-multi-select-control>
+  <cvg-multi-select-control
+    formControlName="responsibilities"
+    label="CONTROLS.LABELS.RESPONSIBILITIES"
+    [options]="responsibilities$ | async"
+  ></cvg-multi-select-control>
+  <cvg-text-area-control formControlName="description" label="CONTROLS.LABELS.DESCRIPTION"></cvg-text-area-control>
+  <cvg-text-area-control formControlName="tasksPerformed" label="CONTROLS.LABELS.TASKS"></cvg-text-area-control>
+</form>

@@ -21,11 +21,12 @@
 .container {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+
   .nz-table {
     height: 100%;
   }
   .row {
     cursor: pointer;
   }
-   overflow: hidden;
 }

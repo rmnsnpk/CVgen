@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/core.actions';
-import { loadProjects } from 'src/app/ngrx/actions/projects.actions';
+import { getProjects } from 'src/app/ngrx/actions/projects.actions';
 import { allProjectsSelector } from 'src/app/ngrx/selectors/projects.selectors';
 import { PROJECTS_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 import { PROJECTS_ADD_PATH, PROJECTS_EDIT_PATH, PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
@@ -25,7 +25,7 @@ export class ProjectPageComponent implements OnInit {
   public projects: IProject[];
 
   ngOnInit(): void {
-    this.store.dispatch(loadProjects());
+    this.store.dispatch(getProjects());
     this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: PROJECTS_BREADCRUMB }));
     this.store
       .select(allProjectsSelector)
@@ -40,7 +40,7 @@ export class ProjectPageComponent implements OnInit {
     this.router.navigate([PROJECTS_PATH.path, PROJECTS_ADD_PATH.path]);
   }
 
-  openEditProject(index: number) {
-    this.router.navigate([PROJECTS_PATH.fullpath, PROJECTS_EDIT_PATH.name, this.projects[index].id]);
+  openEditProject(id: string) {
+    this.router.navigate([PROJECTS_PATH.fullpath, PROJECTS_EDIT_PATH.name, id]);
   }
 }

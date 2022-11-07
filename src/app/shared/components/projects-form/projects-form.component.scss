@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.form {
+  height: 100%;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 900px;
+}

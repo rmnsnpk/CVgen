@@ -6,6 +6,9 @@ import { environment } from 'src/environments/environment';
 import { metaReducers, reducers } from './ngrx/reducers';
 import { effects } from './ngrx/effects';
 import { ProjectsApiService } from './shared/services/api/projects.api.service';
+import { ResponsibilitiesApiService } from './shared/services/api/responsibilities.api.service';
+import { SpecializationsApiService } from './shared/services/api/specializations.api.service';
+import { ProjectRolesApiService } from './shared/services/api/prject-roles.api.services';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { ProjectsApiService } from './shared/services/api/projects.api.service';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot(effects),
   ],
-  providers: [ProjectsApiService],
+  providers: [ProjectsApiService, ResponsibilitiesApiService, SpecializationsApiService, ProjectRolesApiService],
 })
 export class StateModule {}

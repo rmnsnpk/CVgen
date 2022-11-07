@@ -1,2 +1,7 @@
-<p>edit-project-page works!</p>
-<cvg-projects-form></cvg-projects-form>
+<div class="container">
+  <cvg-projects-form [formControl]="projectsForm"></cvg-projects-form>
+  <div class="buttons">
+    <button class="btn" nz-button nzType="primary" (click)="save()">{{ 'BUTTONS.SAVE' | translate }}</button>
+    <button class="btn" nz-button nzType="default" [routerLink]="projectsPath.fullpath">{{ 'BUTTONS.CANSEL' | translate }}</button>
+  </div>
+</div>
