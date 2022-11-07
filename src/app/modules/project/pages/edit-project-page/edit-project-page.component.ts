@@ -22,8 +22,6 @@ import { ISelectedProject } from 'src/app/shared/interfaces/projects.interface';
 export class EditProjectPageComponent implements OnInit, OnDestroy {
   projectsForm = new FormControl();
 
-  onSaveInvalid = false;
-
   projectsPath = PROJECTS_PATH;
 
   id: string;
@@ -70,7 +68,7 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
 
   save() {
     if (this.projectsForm.invalid) {
-      this.onSaveInvalid = true;
+      this.projectsForm.markAsTouched();
       return;
     }
     this.store.dispatch(updateSelectedProject({ project: { ...this.projectsForm.value, id: this.id } }));
