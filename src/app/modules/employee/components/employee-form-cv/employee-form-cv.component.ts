@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { NzTabPosition } from 'ng-zorro-antd/tabs';
@@ -31,14 +31,7 @@ export class EmployeeFormCvComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private store: Store, private cdr: ChangeDetectorRef) {
     this.cvForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      department: ['', Validators.required],
-      institution: ['', Validators.required],
-      skills: [[], Validators.required],
-      languages: [[], Validators.required],
-      diplomaProfession: ['', Validators.required],
-      id: [''],
+      data: new FormControl(),
     });
   }
 

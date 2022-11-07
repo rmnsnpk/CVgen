@@ -29,7 +29,7 @@ export class EmployeeApiService {
     );
   }
 
-  loadEmployees() {
+  loadEmployees(): Observable<any> {
     return this.http.get(environment.apiURL + this.endPoints.usersHttp);
   }
 

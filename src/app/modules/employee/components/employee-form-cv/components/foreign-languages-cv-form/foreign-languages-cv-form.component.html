@@ -1,0 +1,9 @@
+<div>
+  <h2>Languages</h2>
+  <button (click)="addLanguage()">Add</button>
+  <div [formArrayName]="'foreignLanguagesCvForm'" *ngFor="let language of foreignLanguagesCvForm.controls; let i = index">
+    <ng-container [formGroupName]="i">
+      <cvg-multi-select-control [formControlName]="'name'" label="Language"></cvg-multi-select-control>
+    </ng-container>
+  </div>
+</div>

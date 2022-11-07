@@ -4,9 +4,7 @@
       <cvg-employee-form-info [selectedEmployee]="selectedEmployee"></cvg-employee-form-info>
     </nz-tab>
     <nz-tab nzTitle="CV">
-      <cvg-employee-form-cv>
-        <cvg-employee-form-info [selectedEmployee]="selectedEmployee"></cvg-employee-form-info>
-      </cvg-employee-form-cv>
+      <cvg-employee-form-cv> [selectedEmployee]="selectedEmployee" </cvg-employee-form-cv>
     </nz-tab>
   </nz-tabset>
   <div class="buttons">

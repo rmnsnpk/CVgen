@@ -11,14 +11,18 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { BaseTableModule } from 'src/app/shared/components/base-table/base-table.module';
 import { InputControlComponent } from 'src/app/shared/components/input-control/input-control.component';
 import { MultiSelectControlComponent } from 'src/app/shared/components/multi-select-control/multi-select-control.component';
+import { SelectControlComponent } from 'src/app/shared/components/select-control/select-control.component';
+import { TextAreaControlComponent } from 'src/app/shared/components/text-area-control/text-area-control.component';
 import { HttpLoaderFactory } from 'src/app/shared/factories/http-loader.factory';
+import { EducationCvFormComponent } from './components/employee-form-cv/components/education-cv-form/education-cv-form.component';
+import { ForeignLanguagesCvFormComponent } from './components/employee-form-cv/components/foreign-languages-cv-form/foreign-languages-cv-form.component';
+import { GeneralCvFormComponent } from './components/employee-form-cv/components/general-cv-form/general-cv-form.component';
 import { EmployeeFormCvComponent } from './components/employee-form-cv/employee-form-cv.component';
 import { EmployeeFormInfoComponent } from './components/employee-form-info/employee-form-info.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee-page.component';
 import { EditEmployeePageComponent } from './pages/edit-employee-page/edit-employee-page.component';
 import { EmployeeTableDataPipe } from './pipes/employee-table-data.pipe';
-import { SelectControlComponent } from 'src/app/shared/components/select-control/select-control.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +33,14 @@ import { SelectControlComponent } from 'src/app/shared/components/select-control
     EmployeeFormComponent,
     EmployeeFormCvComponent,
     EmployeeFormInfoComponent,
+    EducationCvFormComponent,
+    GeneralCvFormComponent,
+    ForeignLanguagesCvFormComponent,
   ],
   imports: [
     CommonModule,
     MultiSelectControlComponent,
+    TextAreaControlComponent,
     InputControlComponent,
     SelectControlComponent,
     ReactiveFormsModule,

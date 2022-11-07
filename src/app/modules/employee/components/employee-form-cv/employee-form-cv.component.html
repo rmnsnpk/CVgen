@@ -9,7 +9,9 @@
       (nzClose)="closeTab($event)"
     >
       <nz-tab *ngFor="let tab of tabs" nzClosable [nzTitle]="tab">
-        <ng-content></ng-content>
+        <form [formGroup]="cvForm">
+          <cvg-data-cv-form formControlName="data"></cvg-data-cv-form>
+        </form>
       </nz-tab>
     </nz-tabset>
   </div>
