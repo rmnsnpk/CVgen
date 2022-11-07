@@ -95,11 +95,11 @@
       "TASKS": "Задачи"
     },
     "PLACEHOLDERS": {
-      "NAME": "Введите ваше имя",
+      "NAME": "Введите имя",
       "USERNAME": "Введите имя пользователя",
       "PASSWORD": "Введите пароль",
-      "SURNAME": "Введите вашу фамилию",
-      "SPECIALIZATION": "Специализация",
+      "SURNAME": "Введите фамилию",
+      "SPECIALIZATION": "Выберите специализации",
       "EMAIL": "Email",
       "DEPARTMENT": "Выберите отдел",
       "SKILLS": "Выберите навыки",
@@ -109,7 +109,8 @@
       "STACK": "Выберите технологии",
       "ROLES": "Выберите роли",
       "DESCRIPTION": "Описание",
-      "RESPONSIBILITIES": "Обязанности"
+      "RESPONSIBILITIES": "Выберите обязанности",
+      "TASKS": "Задачи"
     }
   }
 }

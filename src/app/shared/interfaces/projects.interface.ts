@@ -20,8 +20,8 @@ export interface ISelectedProject {
   specializations: string[];
   name: string;
   secondName: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   teamSize: number;
   tasksPerformed: string;
   description: string;

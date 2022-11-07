@@ -1,6 +1,5 @@
 <div class="control">
   <label class="control-label">{{ label | translate }}</label>
-
   <nz-date-picker class="control-field" [formControl]="baseControl" [nzPlaceHolder]="placeholder | translate"></nz-date-picker>
   <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
     {{ baseControl.errors | controlErrors | translate }}

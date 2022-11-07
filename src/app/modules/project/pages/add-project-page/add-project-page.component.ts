@@ -34,7 +34,7 @@ export class AddProjectPageComponent implements OnInit {
       this.projectsForm.markAsTouched();
       return;
     }
-    this.store.dispatch(createProject(this.projectsForm.value));
+    this.store.dispatch(createProject({ project: this.projectsForm.value }));
     this.store
       .select(spinnerSelector)
       .pipe(untilDestroyed(this))

@@ -3,13 +3,14 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
+import * as _ from 'lodash';
 import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/core.actions';
 import { deleteSelectedProject, getSelectedProject, updateSelectedProject } from 'src/app/ngrx/actions/projects.actions';
 import { spinnerSelector } from 'src/app/ngrx/selectors/core.selectors';
 import { selectedProjectSelector } from 'src/app/ngrx/selectors/projects.selectors';
 import { PROJECTS_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 import { PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
-import { IProject } from 'src/app/shared/interfaces/projects.interface';
+import { ISelectedProject } from 'src/app/shared/interfaces/projects.interface';
 
 @UntilDestroy()
 @Component({
@@ -27,7 +28,9 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
 
   id: string;
 
-  project: IProject;
+  initialProjectValue: ISelectedProject;
+
+  isSaveDisabled = false;
 
   constructor(private store: Store, private route: ActivatedRoute, private router: Router) {}
 
@@ -39,6 +42,7 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
       .pipe(untilDestroyed(this))
       .subscribe((project) => {
         if (project) {
+          this.initialProjectValue = project;
           this.projectsForm.patchValue(project);
           this.store.dispatch(
             updateBreadcrumbsAction({
@@ -54,6 +58,10 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
           );
         }
       });
+
+    this.projectsForm.valueChanges.pipe(untilDestroyed(this)).subscribe(() => {
+      this.isSaveDisabled = _.isEqual(this.initialProjectValue, { ...this.projectsForm.value, id: this.id });
+    });
   }
 
   ngOnDestroy() {

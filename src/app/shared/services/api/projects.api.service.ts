@@ -18,7 +18,7 @@ export class ProjectsApiService {
     return this.http.get<IProject[]>(environment.apiURL + this.endPoints.projects);
   }
 
-  public createProject(project: any): Observable<IProject> {
+  public createProject(project: IProject): Observable<IProject> {
     return this.http.post<IProject>(environment.apiURL + this.endPoints.projects, project);
   }
 
@@ -31,14 +31,14 @@ export class ProjectsApiService {
           specializations: project.specializations.map((specialization: IListingData) => specialization.id),
           responsibilities: project.responsibilities.map((responsibility: IListingData) => responsibility.id),
           projectRoles: project.projectRoles.map((projectRole: IListingData) => projectRole.id),
+          startDate: new Date(project.startDate),
+          endDate: new Date(project.endDate),
         };
       }),
     );
   }
 
   public updateProject(project: ISelectedProject): Observable<IProject> {
-    console.log(project);
-
     return this.http.put<IProject>(environment.apiURL + this.endPoints.projects, project);
   }
 }

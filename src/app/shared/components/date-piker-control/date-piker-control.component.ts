@@ -14,4 +14,12 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
   styleUrls: ['./date-piker-control.component.scss'],
   imports: [NzDatePickerModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule],
 })
-export class DatePickerControlComponent extends BaseControl {}
+export class DatePickerControlComponent extends BaseControl {
+  public override writeValue(value: string | Date): void {
+    if (value && typeof value === 'string') {
+      this.baseControl.setValue(new Date(value));
+      return;
+    }
+    this.baseControl.setValue(value);
+  }
+}

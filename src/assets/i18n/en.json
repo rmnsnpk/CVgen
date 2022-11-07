@@ -95,11 +95,11 @@
       "TASKS": "Tasks"
     },
     "PLACEHOLDERS": {
-      "NAME": "Enter your first name",
-      "USERNAME": "Enter your username",
-      "PASSWORD": "Enter your password",
-      "SURNAME": "Enter your second name",
-      "SPECIALIZATION": "Specialization",
+      "NAME": "Enter first name",
+      "USERNAME": "Enter username",
+      "PASSWORD": "Enter password",
+      "SURNAME": "Enter second name",
+      "SPECIALIZATION": "Select specialization",
       "EMAIL": "Email",
       "DEPARTMENT": "Enter department",
       "SKILLS": "Select skills",
@@ -109,7 +109,8 @@
       "STACK": "Select tech stack",
       "ROLES": "Select roles",
       "DESCRIPTION": "Enter description",
-      "RESPONSIBILITIES": "Enter responsibilities"
+      "RESPONSIBILITIES": "Enter responsibilities",
+      "TASKS": "Tasks"
     }
   }
 }

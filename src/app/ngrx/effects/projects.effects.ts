@@ -38,8 +38,8 @@ export class ProjectsEffects {
   createProject$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createProject),
-      switchMap((project) => {
-        return this.projectsApiService.createProject(project).pipe(
+      switchMap((action) => {
+        return this.projectsApiService.createProject(action.project).pipe(
           map((projectSuccess) => createProjectSuccess({ project: projectSuccess })),
           catchError((error) => {
             return of(createProjectFailure({ error }));
@@ -67,7 +67,6 @@ export class ProjectsEffects {
     this.actions$.pipe(
       ofType(updateSelectedProject),
       switchMap((action) => {
-        console.log('eff', action.project);
         return this.projectsApiService.updateProject(action.project).pipe(
           map((project) => updateSelectedProjectSuccess({ project })),
           catchError((error) => {
