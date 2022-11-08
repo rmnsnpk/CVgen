@@ -29,3 +29,9 @@ export const loadSelectedEmployeeSuccess = createAction(
 export const loadSelectedEmployeeFailure = createAction('[EMPLOYEES] Load Selected Employees Failure', props<{ error: string }>());
 
 export const deleteSelectedEmployee = createAction('[EMPLOYEES] Delete Selected Employees');
+
+export const createCv = createAction('[EMPLOYEES] Create Employee Cv', props<any>());
+
+export const createCvSuccess = createAction('[EMPLOYEES] Create Employee Cv Success', props<any>());
+
+export const createCvFailure = createAction('[EMPLOYEES] Create Employee Cv Failure', props<{ error: string }>());

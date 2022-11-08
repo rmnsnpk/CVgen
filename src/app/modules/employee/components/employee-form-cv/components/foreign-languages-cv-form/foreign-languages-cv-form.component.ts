@@ -13,9 +13,9 @@ import { IEmployeeDataLanguage } from 'src/app/shared/interfaces/employees.inter
 export class ForeignLanguagesCvFormComponent implements OnInit {
   foreignLanguagesCvForm: FormArray;
 
-  public languages: IEmployeeDataLanguage[];
-
   foreignLanguages: any;
+
+  public languages: IEmployeeDataLanguage[];
 
   constructor(private fb: FormBuilder, private store: Store) {
     this.foreignLanguagesCvForm = this.fb.array([]);

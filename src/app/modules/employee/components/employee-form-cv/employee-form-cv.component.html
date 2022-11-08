@@ -10,7 +10,10 @@
     >
       <nz-tab *ngFor="let tab of tabs" nzClosable [nzTitle]="tab">
         <form [formGroup]="cvForm">
-          <cvg-data-cv-form formControlName="data"></cvg-data-cv-form>
+          <cvg-input-control formControlName="firstName" label="Firstname"></cvg-input-control>
+          <cvg-input-control formControlName="lastName" label="Lastname"></cvg-input-control>
+          <cvg-multi-select-control formControlName="skills" [options]="skills" label="Skills"></cvg-multi-select-control>
+          <cvg-text-area-control formControlName="resume" label="Resume"></cvg-text-area-control>
         </form>
       </nz-tab>
     </nz-tabset>

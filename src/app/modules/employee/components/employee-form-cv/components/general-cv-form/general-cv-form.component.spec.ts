@@ -8,9 +8,8 @@ describe('GeneralCvFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GeneralCvFormComponent ]
-    })
-    .compileComponents();
+      declarations: [GeneralCvFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GeneralCvFormComponent);
     component = fixture.componentInstance;

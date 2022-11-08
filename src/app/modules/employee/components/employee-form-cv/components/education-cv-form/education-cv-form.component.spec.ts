@@ -8,9 +8,8 @@ describe('EducationCvFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EducationCvFormComponent ]
-    })
-    .compileComponents();
+      declarations: [EducationCvFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(EducationCvFormComponent);
     component = fixture.componentInstance;

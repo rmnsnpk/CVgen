@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { createEmployee, loadSelectedEmployee, updateEmployee } from 'src/app/ngrx/actions/employee.actions';
+import { loadSelectedEmployee } from 'src/app/ngrx/actions/employee.actions';
 import { getSelectedEmployeeSelector } from 'src/app/ngrx/selectors/employee.selectors';
 import { EMPLOYEE_PATH } from 'src/app/shared/constants/routing-paths.consts';
 import { IEmployee, ISelectedEmployee } from 'src/app/shared/interfaces/employees.interface';
@@ -24,7 +24,7 @@ export class EmployeeFormComponent implements OnInit {
 
   @Input() isEdit: boolean;
 
-  private mergedForm: any;
+  @Output() public employeeSubmit = new EventEmitter<IEmployee>();
 
   public roles: any;
 
@@ -46,20 +46,7 @@ export class EmployeeFormComponent implements OnInit {
       return;
     }
 
-    this.mergedForm = this.InfoForm.employeeForm.getRawValue();
-    this.store.dispatch(createEmployee(this.mergedForm));
-  }
-
-  public updateFormValue(): void {
-    if (this.InfoForm.employeeForm.invalid) {
-      this.InfoForm.markFormAsDirty();
-      return;
-    }
-
-    this.mergedForm = this.InfoForm.employeeForm.getRawValue();
-    this.store.dispatch(updateEmployee(this.mergedForm));
-
-    // сделать редирект
+    this.employeeSubmit.emit(this.InfoForm.employeeForm.getRawValue());
   }
 
   public cancelFormSubmit(): void {

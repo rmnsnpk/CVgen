@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { EmployeeApiService } from '../../shared/services/api/employee.api.service';
 import {
+  createCvFailure,
+  createCvSuccess,
   createEmployee,
   createEmployeeFailure,
   createEmployeeSuccess,
@@ -12,9 +14,9 @@ import {
   loadEmployeesSuccess,
   loadSelectedEmployee,
   loadSelectedEmployeeSuccess,
+  updateEmployee,
   updateEmployeeFailure,
   updateEmployeeSuccess,
-  updateEmployee,
 } from '../actions/employee.actions';
 
 @Injectable()
@@ -36,8 +38,8 @@ export class EmployeeEffects {
   loadSelectedEmployee$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadSelectedEmployee),
-      switchMap((id) =>
-        this.employeeApiService.loadSelectedEmployee(id.selectedEmployee).pipe(
+      switchMap((action) =>
+        this.employeeApiService.loadSelectedEmployee(action.selectedEmployee).pipe(
           map((selectedEmployee: any) => loadSelectedEmployeeSuccess({ selectedEmployee })),
           catchError((error) => of(loadEmployeesFailure({ error }))),
         ),
@@ -48,8 +50,8 @@ export class EmployeeEffects {
   createEmployee$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createEmployee),
-      switchMap((data: any) =>
-        this.employeeApiService.postEmployee(data).pipe(
+      switchMap((action) =>
+        this.employeeApiService.postEmployee(action.employee).pipe(
           map((employee) => createEmployeeSuccess({ employee })),
           catchError((error) => of(createEmployeeFailure({ error }))),
         ),
@@ -60,10 +62,22 @@ export class EmployeeEffects {
   updateEmployee$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateEmployee),
-      switchMap((data) =>
-        this.employeeApiService.updateEmployee(data).pipe(
+      switchMap((action) =>
+        this.employeeApiService.updateEmployee(action.employee).pipe(
           map((employee) => updateEmployeeSuccess({ employee })),
           catchError((error) => of(updateEmployeeFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  createCv$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createEmployeeSuccess),
+      switchMap((action) =>
+        this.employeeApiService.createCv(action.employee).pipe(
+          map((cv) => createCvSuccess({ cv })),
+          catchError((error) => of(createCvFailure({ error }))),
         ),
       ),
     ),
