@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { IListingData } from 'src/app/shared/interfaces/listing-data';
-import { loadSpecializationsFailure, loadSpecializationsSuccess } from '../actions/specializations.actions';
+import { loadSpecializationsSuccess } from '../actions/specializations.actions';
 
 export interface ISpecializationsState {
   specializations: IListingData[];
@@ -15,8 +15,5 @@ export const specializationsReducer = createReducer(
   on(loadSpecializationsSuccess, (state, action) => ({
     ...state,
     specializations: action.specializations,
-  })),
-  on(loadSpecializationsFailure, (state) => ({
-    ...state,
   })),
 );

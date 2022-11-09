@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { IListingData } from 'src/app/shared/interfaces/listing-data';
-import { loadProjectRolesFailure, loadProjectRolesSuccess } from '../actions/project-roles.actions';
+import { loadProjectRolesSuccess } from '../actions/project-roles.actions';
 
 export interface IProjectRolesState {
   projectRoles: IListingData[];
@@ -15,8 +15,5 @@ export const projectRolesReducer = createReducer(
   on(loadProjectRolesSuccess, (state, action) => ({
     ...state,
     projectRoles: action.projectRoles,
-  })),
-  on(loadProjectRolesFailure, (state) => ({
-    ...state,
   })),
 );

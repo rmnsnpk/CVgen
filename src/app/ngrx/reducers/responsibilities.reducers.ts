@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { IListingData } from 'src/app/shared/interfaces/listing-data';
-import { loadResponsibilitiesFailure, loadResponsibilitiesSuccess } from '../actions/responsibilities.actions';
+import { loadResponsibilitiesSuccess } from '../actions/responsibilities.actions';
 
 export interface IResponsibilitiesState {
   responsibilities: IListingData[];
@@ -15,8 +15,5 @@ export const responsibilitiesReducer = createReducer(
   on(loadResponsibilitiesSuccess, (state, action) => ({
     ...state,
     responsibilities: action.responsibilities,
-  })),
-  on(loadResponsibilitiesFailure, (state) => ({
-    ...state,
   })),
 );
