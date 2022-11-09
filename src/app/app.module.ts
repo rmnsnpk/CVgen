@@ -1,4 +1,4 @@
-import { CommonModule, registerLocaleData } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -19,9 +19,7 @@ import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
 
-import en from '@angular/common/locales/en';
-import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
-registerLocaleData(en);
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 
 @NgModule({
   declarations: [AppComponent],

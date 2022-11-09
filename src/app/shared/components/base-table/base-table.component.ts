@@ -7,6 +7,8 @@ import { ITableColumns } from '../../interfaces/table-columns';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BaseTableComponent {
+  @Input() public uniqueNode = 'id';
+
   @Input() public data: any[];
 
   @Input() public columns: ITableColumns[];

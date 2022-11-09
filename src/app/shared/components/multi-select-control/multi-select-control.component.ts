@@ -6,7 +6,6 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { BaseControl } from '../../classes/base-control';
 import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
 import { GetValueByKeyPipe } from '../../pipes/get-value-by-key.pipe';
-import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
 
 @Component({
   selector: 'cvg-multi-select-control',
@@ -14,7 +13,7 @@ import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
   templateUrl: './multi-select-control.component.html',
   styleUrls: ['./multi-select-control.component.scss'],
 
-  imports: [NzTreeSelectModule, NzSelectModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule, GetValueByKeyPipe],
+  imports: [NzSelectModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule, GetValueByKeyPipe],
 })
 export class MultiSelectControlComponent extends BaseControl {
   @Input() options: any[];

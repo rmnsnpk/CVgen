@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IListingData } from '../../interfaces/listing-data';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ResponsibilitiesApiService {
   public endPoints = {
     responsibilities: 'responsibilities',

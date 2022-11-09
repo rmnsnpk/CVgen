@@ -5,7 +5,9 @@ import { environment } from 'src/environments/environment';
 import { IListingData } from '../../interfaces/listing-data';
 import { IProject, ISelectedProject } from '../../interfaces/projects.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ProjectsApiService {
   public endPoints = {
     projects: 'projects',

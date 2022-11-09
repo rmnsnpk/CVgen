@@ -120,7 +120,7 @@ export class ProjectsFormComponent implements OnInit, DoCheck, ControlValueAcces
 
   public writeValue(val: any): void {
     if (val) {
-      this.projectsForm.patchValue(val, { emitEvent: true });
+      this.projectsForm.patchValue(val);
     }
   }
 

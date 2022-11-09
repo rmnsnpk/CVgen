@@ -2,11 +2,16 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import * as _ from 'lodash';
+import * as lodash from 'lodash';
 import { updateBreadcrumbsAction } from 'src/app/ngrx/actions/core.actions';
-import { deleteSelectedProject, getSelectedProject, updateSelectedProject } from 'src/app/ngrx/actions/projects.actions';
-import { spinnerSelector } from 'src/app/ngrx/selectors/core.selectors';
+import {
+  deleteSelectedProject,
+  getSelectedProject,
+  updateSelectedProject,
+  updateSelectedProjectSuccess,
+} from 'src/app/ngrx/actions/projects.actions';
 import { selectedProjectSelector } from 'src/app/ngrx/selectors/projects.selectors';
 import { PROJECTS_BREADCRUMB } from 'src/app/shared/constants/breadcrumbs.consts';
 import { PROJECTS_PATH } from 'src/app/shared/constants/routing-paths.consts';
@@ -30,7 +35,7 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
 
   isSaveDisabled = false;
 
-  constructor(private store: Store, private route: ActivatedRoute, private router: Router) {}
+  constructor(private store: Store, private route: ActivatedRoute, private router: Router, private actions: Actions) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -58,7 +63,7 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
       });
 
     this.projectsForm.valueChanges.pipe(untilDestroyed(this)).subscribe(() => {
-      this.isSaveDisabled = _.isEqual(this.initialProjectValue, { ...this.projectsForm.value, id: this.id });
+      this.isSaveDisabled = lodash.isEqual(this.initialProjectValue, { ...this.projectsForm.value, id: this.id });
     });
   }
 
@@ -72,13 +77,8 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
       return;
     }
     this.store.dispatch(updateSelectedProject({ project: { ...this.projectsForm.value, id: this.id } }));
-    this.store
-      .select(spinnerSelector)
-      .pipe(untilDestroyed(this))
-      .subscribe((counter) => {
-        if (!counter) {
-          this.router.navigate([PROJECTS_PATH.fullpath]);
-        }
-      });
+    this.actions
+      .pipe(untilDestroyed(this), ofType(updateSelectedProjectSuccess))
+      .subscribe(() => this.router.navigate([PROJECTS_PATH.fullpath]));
   }
 }
