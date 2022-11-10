@@ -1,4 +1,10 @@
+import { ChangeDetectorRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { MockPipe } from 'mock-pipe';
+import { EmployeeTableDataPipe } from '../../pipes/employee-table-data.pipe';
 
 import { EmployeePageComponent } from './employee.page.component';
 
@@ -8,7 +14,9 @@ describe('EmployeePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EmployeePageComponent],
+      imports: [TranslateModule.forRoot()],
+      declarations: [EmployeePageComponent, MockPipe(EmployeeTableDataPipe, (value) => value)],
+      providers: [provideMockStore({}), RouterTestingModule, ChangeDetectorRef],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EmployeePageComponent);

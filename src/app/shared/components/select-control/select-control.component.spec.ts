@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgControl } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { SelectControlComponent } from './select-control.component';
 
@@ -8,7 +10,8 @@ describe('SelectControlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectControlComponent],
+      imports: [SelectControlComponent, TranslateModule.forRoot()],
+      providers: [NgControl],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SelectControlComponent);

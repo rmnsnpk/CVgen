@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
@@ -13,4 +13,4 @@ import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
 
   imports: [NzInputNumberModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule],
 })
-export class NumInputControlComponent extends BaseControl implements OnInit {}
+export class NumInputControlComponent extends BaseControl {}

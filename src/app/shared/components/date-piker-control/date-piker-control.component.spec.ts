@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatePikerControlComponent } from './date-piker-control.component';
+import { DatePickerControlComponent } from './date-piker-control.component';
 
 describe('DatePikerControlComponent', () => {
-  let component: DatePikerControlComponent;
-  let fixture: ComponentFixture<DatePikerControlComponent>;
+  let component: DatePickerControlComponent;
+  let fixture: ComponentFixture<DatePickerControlComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DatePikerControlComponent],
+      imports: [DatePickerControlComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DatePikerControlComponent);
+    fixture = TestBed.createComponent(DatePickerControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
