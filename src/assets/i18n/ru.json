@@ -10,11 +10,16 @@
         "EMPLOYEES": "Работники",
         "PROJECTS": "Проекты",
         "EMPLOYEES_ADD": "Добавить работника",
-        "PROJECTS_ADD": "Добавить проект"
+        "PROJECTS_ADD": "Добавить проект",
+        "PROJECTS_EDIT": "Изменить проект"
       },
       "LABELS": {
         "EMPLOYEES": "Работники",
-        "PROJECTS": "Проекты"
+        "PROJECTS": "Проекты",
+        "PROJECTS_ADD": "Добавить проект",
+        "EMPLOYEES_ADD": "Добавить работника",
+        "PROJECTS_EDIT": "Изменить проект",
+        "EMPLOYEES_EDIT": "Изменить работника"
       },
       "DESCRIPTIONS": {
         "EMPLOYEES": "Список работников",
@@ -86,14 +91,15 @@
       "STACK": "Технологии",
       "ROLES": "Роли",
       "DESCRIPTION": "Описание",
-      "RESPONSIBILITIES": "Обязанности"
+      "RESPONSIBILITIES": "Обязанности",
+      "TASKS": "Задачи"
     },
     "PLACEHOLDERS": {
-      "NAME": "Введите ваше имя",
+      "NAME": "Введите имя",
       "USERNAME": "Введите имя пользователя",
       "PASSWORD": "Введите пароль",
-      "SURNAME": "Введите вашу фамилию",
-      "SPECIALIZATION": "Специализация",
+      "SURNAME": "Введите фамилию",
+      "SPECIALIZATION": "Выберите специализации",
       "EMAIL": "Email",
       "DEPARTMENT": "Выберите отдел",
       "SKILLS": "Выберите навыки",
@@ -103,7 +109,8 @@
       "STACK": "Выберите технологии",
       "ROLES": "Выберите роли",
       "DESCRIPTION": "Описание",
-      "RESPONSIBILITIES": "Обязанности"
+      "RESPONSIBILITIES": "Выберите обязанности",
+      "TASKS": "Задачи"
     }
   }
 }

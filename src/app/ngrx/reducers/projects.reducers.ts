@@ -1,22 +1,34 @@
 import { createReducer, on } from '@ngrx/store';
-import { loadProjectsFailure, loadProjectsSuccess } from '../actions/projects.actions';
+import { IProject, ISelectedProject } from 'src/app/shared/interfaces/projects.interface';
+import { createProjectSuccess, deleteSelectedProject, getProjectsSuccess, getSelectedProjectSuccess } from '../actions/projects.actions';
 
 export interface IProjectsState {
-  projects: any;
+  projects: IProject[];
+  selectedProject: ISelectedProject;
 }
 
 const initialState: IProjectsState = {
   projects: [],
+  selectedProject: null,
 };
 
 export const projectsReducer = createReducer(
   initialState,
 
-  on(loadProjectsSuccess, (state, action) => ({
+  on(getProjectsSuccess, (state, action) => ({
     ...state,
     projects: action.projects,
   })),
-  on(loadProjectsFailure, (state) => ({
+  on(createProjectSuccess, (state, action) => ({
     ...state,
+    projects: [...state.projects, action.project],
+  })),
+  on(getSelectedProjectSuccess, (state, action) => ({
+    ...state,
+    selectedProject: action.project,
+  })),
+  on(deleteSelectedProject, (state) => ({
+    ...state,
+    selectedProject: null,
   })),
 );

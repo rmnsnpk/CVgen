@@ -1,22 +1,25 @@
-import { CommonModule, registerLocaleData } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import en from '@angular/common/locales/en';
+import { TranslateModule } from '@ngx-translate/core';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { NzI18nService } from 'ng-zorro-antd/i18n';
 import { BaseControl } from '../../classes/base-control';
 import { ControlErrorsPipe } from '../../pipes/control-errors.pipe';
-import { TranslateModule } from '@ngx-translate/core';
-registerLocaleData(en);
 
 @Component({
-  selector: 'cvg-date-piker-control',
+  selector: 'cvg-date-picker-control',
   standalone: true,
   templateUrl: './date-piker-control.component.html',
   styleUrls: ['./date-piker-control.component.scss'],
-  providers: [NzI18nService],
-
   imports: [NzDatePickerModule, ReactiveFormsModule, CommonModule, ControlErrorsPipe, TranslateModule],
 })
-export class DatePikerControlComponent extends BaseControl {}
+export class DatePickerControlComponent extends BaseControl {
+  public override writeValue(value: string | Date): void {
+    if (value && typeof value === 'string') {
+      this.baseControl.setValue(new Date(value));
+      return;
+    }
+    this.baseControl.setValue(value);
+  }
+}

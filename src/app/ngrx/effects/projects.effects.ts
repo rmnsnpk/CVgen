@@ -1,25 +1,79 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { ProjectsApiService } from 'src/app/shared/services/api/projects.api.service';
-import { loadProjects, loadProjectsFailure, loadProjectsSuccess } from '../actions/projects.actions';
+import {
+  createProject,
+  createProjectFailure,
+  createProjectSuccess,
+  getSelectedProject,
+  getSelectedProjectFailure,
+  getSelectedProjectSuccess,
+  getProjects,
+  getProjectsFailure,
+  getProjectsSuccess,
+  updateSelectedProject,
+  updateSelectedProjectSuccess,
+  updateSelectedProjectFailure,
+} from '../actions/projects.actions';
 
 @Injectable()
 export class ProjectsEffects {
-  constructor(private actions$: Actions, private store: Store, private projectsApiService: ProjectsApiService) {}
+  constructor(private actions$: Actions, private projectsApiService: ProjectsApiService) {}
 
-  loadProjects$ = createEffect(() =>
+  getProjects$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(loadProjects),
+      ofType(getProjects),
       switchMap(() =>
-        this.projectsApiService.loadProjects().pipe(
-          map((projects) => loadProjectsSuccess({ projects })),
+        this.projectsApiService.getProjects().pipe(
+          map((projects) => getProjectsSuccess({ projects })),
           catchError((error) => {
-            return of(loadProjectsFailure({ error }));
+            return of(getProjectsFailure({ error }));
           }),
         ),
       ),
+    ),
+  );
+
+  createProject$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createProject),
+      switchMap((action) => {
+        return this.projectsApiService.createProject(action.project).pipe(
+          map((projectSuccess) => createProjectSuccess({ project: projectSuccess })),
+          catchError((error) => {
+            return of(createProjectFailure({ error }));
+          }),
+        );
+      }),
+    ),
+  );
+
+  getSelectedProject$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getSelectedProject),
+      switchMap((action) => {
+        return this.projectsApiService.getProjectById(action.id).pipe(
+          map((project) => getSelectedProjectSuccess({ project })),
+          catchError((error) => {
+            return of(getSelectedProjectFailure({ error }));
+          }),
+        );
+      }),
+    ),
+  );
+
+  updateSelectedProject$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateSelectedProject),
+      switchMap((action) => {
+        return this.projectsApiService.updateProject(action.project).pipe(
+          map((project) => updateSelectedProjectSuccess({ project })),
+          catchError((error) => {
+            return of(updateSelectedProjectFailure(error));
+          }),
+        );
+      }),
     ),
   );
 }

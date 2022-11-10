@@ -13,11 +13,13 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { TitleStrategy } from '@angular/router';
 import { HttpLoaderFactory } from './shared/factories/http-loader.factory';
+import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 import { TokenExpirationInterceptor } from './shared/interceptors/token-expiration.interceptor';
 import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { ChangeTitleService } from './shared/services/change-title.service';
 import { StateModule } from './state.module';
-import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
+
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,6 +53,7 @@ import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
       multi: true,
     },
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+    { provide: NZ_I18N, useValue: en_US },
   ],
   bootstrap: [AppComponent],
 })

@@ -36,7 +36,7 @@ export const PROJECTS_ADD_BREADCRUMB: IBreadcrumb[] = [
   ...PROJECTS_BREADCRUMB,
   {
     url: '/projects/add',
-    label: 'MAIN.SUBHEADER.LABELS.PROJECTS',
+    label: 'MAIN.SUBHEADER.LABELS.PROJECTS_ADD',
     name: 'MAIN.SUBHEADER.NAMES.PROJECTS_ADD',
     description: 'MAIN.SUBHEADER.DESCRIPTIONS.PROJECTS_ADD',
   },

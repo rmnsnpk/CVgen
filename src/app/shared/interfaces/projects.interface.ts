@@ -11,5 +11,19 @@ export interface IProject {
   teamSize: number;
   tasksPerformed: string;
   description: string;
-  id: string;
+  id?: string;
+}
+
+export interface ISelectedProject {
+  responsibilities: string[];
+  projectRoles: string[];
+  specializations: string[];
+  name: string;
+  secondName: string;
+  startDate: Date;
+  endDate: Date;
+  teamSize: number;
+  tasksPerformed: string;
+  description: string;
+  id?: string;
 }

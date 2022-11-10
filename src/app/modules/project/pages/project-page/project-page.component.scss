@@ -6,10 +6,9 @@
 
 .container {
   height: 100%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-
+  padding: 20px;
   .btn {
     align-self: flex-end;
     margin-bottom: 20px;

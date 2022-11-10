@@ -6,7 +6,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="row" (click)="openRow(index)" *ngFor="let data of basicTable.data; let index = index; trackBy: trackById">
+      <tr class="row" (click)="openRow(data[uniqueNode])" *ngFor="let data of basicTable.data; let index = index; trackBy: trackById">
         <td *ngFor="let item of columns">{{ data[item.fieldName] }}</td>
       </tr>
     </tbody>

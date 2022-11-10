@@ -2,8 +2,13 @@
   <label class="control-label">{{ label | translate }}</label>
 
   <nz-select class="control-field" [formControl]="baseControl" nzMode="multiple" [nzPlaceHolder]="placeholder | translate">
-    <nz-option *ngFor="let option of options" [nzLabel]="option" [nzValue]="option"></nz-option>
+    <nz-option
+      *ngFor="let option of options"
+      [nzLabel]="option | getValueByKey: labelField"
+      [nzValue]="option | getValueByKey: valueField"
+    ></nz-option>
   </nz-select>
+
   <p class="control-error-message" *ngIf="baseControl.invalid && baseControl.dirty">
     {{ baseControl.errors | controlErrors | translate }}
   </p>
