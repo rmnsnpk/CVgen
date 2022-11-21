@@ -27,6 +27,10 @@ export class ProjectPageComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(getProjects());
     this.store.dispatch(updateBreadcrumbsAction({ breadcrumbsUpdate: PROJECTS_BREADCRUMB }));
+    this.getProjectsFromStore();
+  }
+
+  getProjectsFromStore() {
     this.store
       .select(allProjectsSelector)
       .pipe(untilDestroyed(this))

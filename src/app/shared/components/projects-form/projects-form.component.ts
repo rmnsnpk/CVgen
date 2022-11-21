@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, forwardRef, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, forwardRef, OnInit } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
@@ -67,8 +67,6 @@ import { TextAreaControlComponent } from '../text-area-control/text-area-control
 })
 @UntilDestroy()
 export class ProjectsFormComponent implements OnInit, DoCheck, ControlValueAccessor, Validator {
-  @Input() projectsFromFields: IProject;
-
   public projectsForm: FormGroup;
 
   public specializations$: Observable<IListingData[]>;
@@ -92,7 +90,10 @@ export class ProjectsFormComponent implements OnInit, DoCheck, ControlValueAcces
     this.store.dispatch(loadSpecializations());
     this.store.dispatch(loadProjectRoles());
     this.store.dispatch(loadResponsibilities());
+    this.loadForm();
+  }
 
+  public loadForm() {
     this.specializations$ = this.store.select(allSpecializationsSelector);
     this.projectRoles$ = this.store.select(allProjectRolesSelector);
     this.responsibilities$ = this.store.select(allResponsibilitiesSelector);
