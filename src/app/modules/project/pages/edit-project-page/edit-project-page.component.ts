@@ -39,6 +39,17 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    this.getSelectedProject();
+    this.projectsForm.valueChanges.pipe(untilDestroyed(this)).subscribe(() => {
+      this.isSaveDisabled = lodash.isEqual(this.initialProjectValue, { ...this.projectsForm.value, id: this.id });
+    });
+  }
+
+  ngOnDestroy() {
+    this.store.dispatch(deleteSelectedProject());
+  }
+
+  getSelectedProject() {
     this.store.dispatch(getSelectedProject({ id: this.id }));
     this.store
       .select(selectedProjectSelector)
@@ -61,14 +72,6 @@ export class EditProjectPageComponent implements OnInit, OnDestroy {
           );
         }
       });
-
-    this.projectsForm.valueChanges.pipe(untilDestroyed(this)).subscribe(() => {
-      this.isSaveDisabled = lodash.isEqual(this.initialProjectValue, { ...this.projectsForm.value, id: this.id });
-    });
-  }
-
-  ngOnDestroy() {
-    this.store.dispatch(deleteSelectedProject());
   }
 
   save() {

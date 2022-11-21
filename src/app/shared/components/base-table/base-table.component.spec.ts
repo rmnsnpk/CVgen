@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BaseTableComponent } from './base-table.component';
@@ -9,6 +10,7 @@ describe('BaseTableComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [BaseTableComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BaseTableComponent);

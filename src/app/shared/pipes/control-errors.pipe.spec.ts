@@ -5,4 +5,8 @@ describe('ControlErrorsPipe', () => {
     const pipe = new ControlErrorsPipe();
     expect(pipe).toBeTruthy();
   });
+  it('should return error message', () => {
+    const pipe = new ControlErrorsPipe();
+    expect(pipe.transform({ required: true })).toEqual('CONTROLS.ERRORS.REQUIRED');
+  });
 });
