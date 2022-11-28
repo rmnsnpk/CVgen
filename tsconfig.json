@@ -19,12 +19,14 @@
     "target": "es2020",
     "module": "es2020",
     "lib": ["es2020", "dom"],
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "types": ["cypress", "node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": ["src", "**/*.ts"]
 }
