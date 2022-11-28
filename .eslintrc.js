@@ -4,9 +4,9 @@ module.exports = {
     {
       files: ['*.ts'],
       parserOptions: {
-        project: 'tsconfig.json',
-        tsconfigRootDir: __dirname,
         sourceType: 'module',
+        project: 'tsconfig.eslint.json',
+        tsconfigRootDir: './',
       },
       settings: {
         'import/resolver': {
@@ -33,6 +33,7 @@ module.exports = {
             printWidth: 140,
           },
         ],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
       },
     },
 
